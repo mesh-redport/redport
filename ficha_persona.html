@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>redport</title>
+  <!--Estilos css (sass)-->
+  <link rel='stylesheet' type='text/css' href='sass/main.css' />
+  <!--Familia tipográfica Roboto (google fonts)-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+  <!--familia de íconos-->
+   <link href="https://file.myfontastic.com/KHbqgc9xxoCbZJYRdioaqd/icons.css" rel="stylesheet">
+   <link rel='stylesheet' type='text/css' href='sass/styles.css' />
+   <!--api de mapbox-->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+ <body>
+   <div class="pagina_esp">
+   <!-- ======= header======= -->
+  <div class="header2">
+    <div class="back-button" onclick="history.back()"><a href="#"><div class="rpicon-back"></div></a></div>
+    <div class="title_header"><h1>Nombre persona</h1></div>
+
+  </div>
+
+
+<div class="container">
+  <div class="perfil_persona_container">
+    <div class="usuario_personal"><div class="rpicon-user-bad"></div></div>
+    <p id="nombre_personal">Bárbara Mora R.</p>
+    <div class="message-button-inv"><a href="#"><div class="rpicon-message-inv"></div></a></div>
+  </div>
+  <h2>Se encuentra con</h2>
+  <ul class="name_list">
+      <div class="list_box">
+        <div class="text_box_2">
+          <li>Sebastián Aranda F.</li>
+        </div>
+        <div class="text_box_2">
+          <li>María Farías C.</li>
+        </div>
+      </div>
+    </ul>
+
+  <h2>Busca a</h2>
+  <ul class="name_list">
+      <div class="list_box">
+        <div class="text_box_2">
+          <li>Hector Mora F.</li>
+        </div>
+      </div>
+    </ul>
+
+      
+  </div>
+
+  <div class="container">
+    <div class="edit_title"><h1 class="title-icon">Vivienda</h1></div>
+    <div class="home-icon-container"><div class="rpicon-home"></div></div>
+    <h2 class="texto_vivienda">casa</h2>
+
+  <ul class="name_list">
+    <div class="list_box">
+      <div class="text_box_2">
+        <li>Daño menor</li>
+      </div>
+      <div class="text_box_2">
+        <li>Sin fugas</li>
+      </div>
+      <div class="text_box_2">
+        <li>No necesita albergue</li>
+      </div>
+    </div>
+  </ul>
+  </div>
+
+
+  <div class="container">
+
+      <h1 class="title-icon">Ubicación</h1>
+
+   <div class="map">
+      
+      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3345.0698151437036!2d-71.58095672261143!3d-33.02829109958188!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1468279338455" width="347" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+    <!--Mapbox screenshot-->
+      <!--<img class="map_content" src="https://api.mapbox.com/styles/v1/cleudio/ciqiooxr70000bjm0krbou6i0/static/-71.579739,-33.029077,12.96,-9.96,30.00/347x250?access_token=pk.eyJ1IjoiY2xldWRpbyIsImEiOiJjaWkxNmUyeGIwMDM5dDNrZnI1N2Y1eGxrIn0.gZNnFCWNxfxUD50feHVsyg" width="347" height="250" alt="Dark" />-->
+     
+      <div id='map' style='width: 347px; height: 300px;'></div>
+
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2xldWRpbyIsImEiOiJjaXIxb3o2NTUwMDNvOWhrcTVwaGRudG0xIn0.ve3cEnjZjNjqpYw_hju_cQ';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/cleudio/ciqiooxr70000bjm0krbou6i0',
+            center: [-71.601162, -33.017948],
+            zoom: 10
+        });
+        </script>
+
+   </div>
+</div>
+
+    </div>
+  </div>
+  </div>
+ </body>
+</html>

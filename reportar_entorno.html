@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>redport</title>
+<!--Estilos css (sass)-->
+  <link rel='stylesheet' type='text/css' href='sass/main.css' />
+  <!--Familia tipográfica Roboto (google fonts)-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+  <!--familia de íconos-->
+   <link href="https://file.myfontastic.com/KHbqgc9xxoCbZJYRdioaqd/icons.css" rel="stylesheet">
+   <link rel='stylesheet' type='text/css' href='sass/styles.css' />
+   <!--api de mapbox-->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+ <body>
+   <div class="pagina_esp">
+   <!-- ======= header======= -->
+  <div class="header2">
+    <div class="back-button"><a href="home.html"><div class="rpicon-back"></div></a></div>
+    <div class="title_header"><h1>Reportar entorno</h1>
+    </div>
+  </div>
+
+<div class="container">
+
+  <h1>Añadir marcador</h1>
+
+  <form action="" class="form-report">
+    <input class="title__box" type="text" id="titulo" name="título" placeholder="Añade un título">
+    <label class="title_form_input" for="titulo"><h2>Título</h2></label>
+  </form>
+
+  <h1 id="title_form">Añade una etiqueta al marcador</h1>
+
+  <div class="markers">
+    <input type="radio" name="estate" id="checkbox_big_1" class="marker"/>
+    <label for="checkbox_big_1" class="rpicon-toggle-small-inverse"><div class="rpicon-cut-road"></div><p class="text_marker">Camino cortado</p></label>
+    <input type="radio" name="estate" id="checkbox_big_2" class="marker"/>
+    <label for="checkbox_big_2" class="rpicon-toggle-small-inverse"><div class="rpicon-cut-bridge"></div><p class="text_marker"><br>Puente roto</p></label>
+    <input type="radio" name="estate" id="checkbox_big_3" class="marker"/>
+    <label for="checkbox_big_3" class="rpicon-toggle-small-inverse"><div class="rpicon-fire"></div><p class="text_marker"><br>Incendio</p></label>
+    <input type="radio" name="estate" id="checkbox_big_4" class="marker"/>
+    <label for="checkbox_big_4" class="rpicon-toggle-small-inverse"><div class="rpicon-landslide"></div><p class="text_marker"><br>Deslizamiento</p></label>
+    <input type="radio" name="estate" id="checkbox_big_5" class="marker"/>
+    <label for="checkbox_big_5" class="rpicon-toggle-small-inverse"><div class="rpicon-crush"></div><p class="text_marker">Accidente<br>de tránsito</p></label>
+    <input type="radio" name="estate" id="checkbox_big_6" class="marker"/>
+    <label for="checkbox_big_6" class="rpicon-toggle-small-inverse"><div class="rpicon-hospital"></div><p class="text_marker">Hospital<br>de campaña</p></label>
+    <input type="radio" name="estate" id="checkbox_big_7" class="marker"/>
+    <label for="checkbox_big_7" class="rpicon-toggle-small-inverse"><div class="rpicon-refuge"></div><p class="text_marker"><br>Albergue</p></label>
+    <input type="radio" name="estate" id="checkbox_big_8" class="marker"/>
+    <label for="checkbox_big_8" class="rpicon-toggle-small-inverse"><div class="rpicon-collection-center"></div><p class="text_marker">Centro de Acopio</p></label>
+
+
+  </div>
+
+</div>
+
+<div class="container">
+
+   <div class="map">
+      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3345.0698151437036!2d-71.58095672261143!3d-33.02829109958188!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1468279338455" width="347" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+    <!--Mapbox screenshot-->
+      <!--<img class="map_content" src="https://api.mapbox.com/styles/v1/cleudio/ciqiooxr70000bjm0krbou6i0/static/-71.579739,-33.029077,12.96,-9.96,30.00/347x250?access_token=pk.eyJ1IjoiY2xldWRpbyIsImEiOiJjaWkxNmUyeGIwMDM5dDNrZnI1N2Y1eGxrIn0.gZNnFCWNxfxUD50feHVsyg" width="347" height="250" alt="Dark" />-->
+      <div id='map' style='width: 347px; height: 300px;'></div>
+
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2xldWRpbyIsImEiOiJjaXIxb3o2NTUwMDNvOWhrcTVwaGRudG0xIn0.ve3cEnjZjNjqpYw_hju_cQ';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/cleudio/ciqiooxr70000bjm0krbou6i0',
+            center: [-71.601162, -33.017948],
+            zoom: 10
+        });
+        </script>
+
+   </div>
+</div>
+
+ <a class="button" href="home.html">Guardar</a>
+
+
+  </div>
+  </div>
+ </body>
+</html>
