@@ -372,22 +372,28 @@ include "conUCV.php";
    </div>
 </div>
 
-  <div class="container" id="repor
-  tes">
+  <div class="container" id="reportes">
 
-        <h1><a name="reportes">Escriba un reporte</a></h1>
+    <h1><a name="reportes">Últimos reportes cerca<br>de Usted</a></h1>
 
-<div>
-<form action="" class="form-report">
-        <textarea class="report__box" type="text" id="description" name="título" placeholder="Escribe aquí tu reporte" rows="5" cols="5"></textarea>
-        <button id="btn_reportar" class="button_small_two" type="submit" >+</button>
+<div style="height: 150px;">
+<form action="#" class="form-report" id="formulariocomentarios">
+        
 
+        <textarea class="report__box" type="text" id="comentario" name="título" placeholder="Escribe aquí tu reporte" rows="5" cols="5"></textarea>
+        
+<div class="container_button">
+        <button id="btn_reportar" class="button_comment" type="submit">Reportar</button>
+</div>
         <input type="text" hidden id="rut" name="rut" value="<?php echo $_REQUEST['rut']; ?>">
+        <input type="text" hidden id="comentarioM" name="comentarioM" value="">
+        <input type="text" hidden id="cord1C" name="cord1C" value="<?php echo $fila['cord1']; ?>">
+        <input type="text" hidden id="cord2C" name="cord2C">
+
 
 </form>
 </div>
 
-    <h1><a name="reportes">Últimos reportes cerca<br>de Usted</a></h1>
     <div id="reportesAJAX">
 
 <!-- caja de comentarios -->
@@ -411,6 +417,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
       return $miles;
   }
 }
+
 //TU USUARIO
 $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and registroIP = "'.ip2long($_REQUEST['rut']).'" and detalle = "'.$_SERVER['HTTP_USER_AGENT'].'" LIMIT 1';
         $resultado = mysql_query($sql, $enlace);
@@ -426,6 +433,9 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
           //echo 'mi coord es lat '.$fila['cord1'].' longi '.$fila['cord2'].'<br>';
 
           //TODOS LOS USUARIOS
+
+          $coordenadaX =  $fila['cord1'];
+          $coordenadaY =  $fila['cord2'];
           $sql2 = 'SELECT cid,ipautor,ubicacionX,ubicacionY,comentario,fecha,hora,p.estado FROM comentarios LEFT JOIN personas as p on ipautor = registroIP and ubicacionX = cord1 group by cid order by cid desc limit 4';
           $resultado2 = mysql_query($sql2, $enlace);
 
@@ -475,59 +485,7 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
 ?>
 </div>
 
-<!--
-    <div class="container_report">
-      <ul id="reports_list" class="container_reports">
-        <li>
-          <a href="ficha_persona.html">
-            <div class="user_avatar"><div class="rpicon-user-bad-small"></div></div>
-            <div class="comment_box">
-           
-                <div class="username">
-                <h2 id="name" class="username">Bárbara Mora R.</h2>
-            </a>
-                <span class="comment_date">5 min</span>
-              <div class="comment_content"><p class="comment">Et omnesque delectus eum, vis alterum eleifend ad. Sit ceteros sapientem quaerendum no. Eu duo populo vituperata.</p></div>
-              </div>
-            </div>
-         
-        </li>
-      </ul>
-    </div>
-    <div class="container_report">
-      <ul id="reports_list" class="container_reports">
-        <li>
-          <div class="user_avatar"><div class="rpicon-user-good-small"></div></div>
-            <div class="comment_box">
-              
-                <div class="username">
-                <h2 id="name" class="username">Andrea Farías C.</h2>
-                <span class="comment_date">10 min</span>
-              <div class="comment_content"><p class="comment">Et omnesque delectus eum, vis alterum eleifend ad. Sit ceteros sapientem quaerendum no. Eu duo populo vituperata.</p></div>
-              </div>
 
-            </div>
-            
-        </li>
-      </ul>
-    </div>
-    <div class="container_report">
-      <ul id="reports_list" class="container_reports">
-        <li>
-            <div class="user_avatar"><div class="rpicon-user-good-small"></div></div>
-            <div class="comment_box">
-
-              <div class="username">
-              <h2 id="name" class="username">Alfredo Rojas F.</h2>
-              <span class="comment_date">20 min</span>
-            <div class="comment_content"><p class="comment">Et omnesque delectus eum, vis alterum eleifend ad. Sit ceteros sapientem quaerendum no. Eu duo populo vituperata.</p></div>
-            </div>
-
-
-            </div>
-            
-        </li>
-      </ul>-->
 <!-- botón ver más reportes-->
      <div class="button_more">
        <a href="#" class="text_button_more">ver más reportes<div class="rpicon-down"></div></a>
@@ -540,7 +498,7 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
 <script src="js/main.js"></script>
 <script>
 //reportes
-var timeout = setInterval(reload, 10000);
+var timeout = setInterval(reload, 3000);
 function reload(){
   $('#reportesAJAX').load(location.href + ' #reportesAJAX');
 }
@@ -549,6 +507,31 @@ var timeout1 = setInterval(reloadS, 60000);
 function reloadS(){
   $('#indicatorsAJAX').load(location.href + ' #indicatorsAJAX');
 }
+
+
+$('#comentario').change(function() {
+    document.getElementById("comentarioM").value = document.getElementById("comentario").value;
+    document.getElementById("cord1C").value = "<?php echo $coordenadaX; ?>";
+    document.getElementById("cord2C").value = "<?php echo $coordenadaY; ?>";
+      // Change occurred so count chars...
+    });
+
+
+/* Data Insert Starts Here */
+   $(document).on('submit', '#formulariocomentarios', function() {
+
+    $.post("enviarComentario_POST.php", $(this).serialize())
+    .done(function(data){
+     $("#dis").fadeIn('slow', function(){
+     $("#dis").html('<div class="alert alert-info">'+data+'</div>');
+     $("#emp-SaveForm")[0].reset();
+     }); 
+   });   
+  return false;
+});
+/* Data Insert Ends Here */
+
 </script>
+
  </body>
 </html>
