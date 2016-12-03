@@ -5,4 +5,5 @@ REdPORT es un servicio para conectar a las personas inmediatamente después de l
 ## Instrucciones
 
 Para compilar los estilos `sass`:
-* `sass sass/main.sass css/redport.css --watch`
+
+* `sass --watch sass/main.sass:css/redport.css --style compressed`
