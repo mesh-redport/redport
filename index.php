@@ -18,7 +18,7 @@ include "conUCV.php";
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel= "stylesheet">
   <!--familia de íconos-->
   <link href="https://file.myfontastic.com/KHbqgc9xxoCbZJYRdioaqd/icons.css" rel="stylesheet">
-  <link rel='stylesheet' type='text/css' href='sass/styles.css' />
+  <link rel='stylesheet' type='text/css' href='css/redport.css' />
   <!--api de mapbox-->
   <script src='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
@@ -136,7 +136,6 @@ include "conUCV.php";
           echo '<span class="alert_date">'.$row["fecha"].'</span><span class="alert_hour">'.$row["lugar"].'</span>';
           echo '<p class="alerts">'.$row["detalle"].'</p>';
 
-
       } ?>
   </div>
 </div>
@@ -164,7 +163,6 @@ include "conUCV.php";
             style: 'mapbox://styles/cleudio/ciqiooxr70000bjm0krbou6i0',
             center: [-71.601162, -33.017948],
             zoom: 10
-
         })
         </script>
 
@@ -192,7 +190,5 @@ include "conUCV.php";
                document.getElementById("btn_reportar").disabled = false;
        }
    </script>
-
-
  </body>
 </html>

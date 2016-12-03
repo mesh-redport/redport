@@ -13,7 +13,7 @@ include "conUCV.php";
   <link rel='stylesheet' type='text/css' href='sass/main.css' />
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
   <link href="https://file.myfontastic.com/KHbqgc9xxoCbZJYRdioaqd/icons.css" rel="stylesheet">
-  <link rel='stylesheet' type='text/css' href='sass/styles.css' />
+  <link rel='stylesheet' type='text/css' href='css/redport.css' />
 </head>
 <body>
    <div class="pagina_esp">

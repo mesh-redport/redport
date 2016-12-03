@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Patri
  * Date: 02-10-2016
  * Time: 17:39
  */
+
 error_reporting(E_ALL ^ E_DEPRECATED);
 
 $servername = "localhost";

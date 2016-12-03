@@ -2,6 +2,68 @@
 * {
   box-sizing: border-box; }
 
+body {
+  margin: 0 auto;
+  background-color: #b5b5b5; }
+
+p {
+  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.8px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #fcc92f; }
+
+#title_form {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  padding: 20px 15px 15px 15px;
+  position: relative;
+  color: #fcc92f; }
+
+#title_form_1 {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  padding: 20px 15px 15px 15px;
+  position: relative;
+  color: #fcc92f; }
+
+#name_list_1 {
+  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  list-style-type: none;
+  padding-bottom: 19px;
+  color: #fcc92f; }
+  #name_list_1 .lista_form_1 {
+    display: inline-block;
+    width: 200px;
+    padding-left: 30px; }
+
+.perfil_persona {
+  padding-bottom: 15px; }
+  .perfil_persona p {
+    font-size: 17px;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fcc92f; }
+
 .pagina {
   width: 100%;
   margin: 0 auto;
@@ -24,10 +86,6 @@
   display: block;
   padding-top: 70px;
   padding-bottom: 5px; }
-
-body {
-  margin: 0 auto;
-  background-color: #b5b5b5; }
 
 .header2 {
   width: 100%;
@@ -1992,62 +2050,4 @@ canvas.mapboxgl-canvas {
 .map_people {
   height: 60px; }
 
-#title_form {
-  margin: 0 auto;
-  margin-bottom: 10px;
-  display: block;
-  text-align: center;
-  font-size: 20px;
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  padding: 20px 15px 15px 15px;
-  position: relative;
-  color: #fcc92f; }
-
-#title_form_1 {
-  margin: 0 auto;
-  margin-bottom: 10px;
-  display: block;
-  text-align: center;
-  font-size: 20px;
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  padding: 20px 15px 15px 15px;
-  position: relative;
-  color: #fcc92f; }
-
-#name_list_1 {
-  font-size: 17px;
-  font-family: "Roboto", sans-serif;
-  position: relative;
-  list-style-type: none;
-  padding-bottom: 19px;
-  color: #fcc92f; }
-  #name_list_1 .lista_form_1 {
-    display: inline-block;
-    width: 200px;
-    padding-left: 30px; }
-
-p {
-  font-size: 17px;
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  letter-spacing: 0.8px;
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #fcc92f; }
-
-.perfil_persona {
-  padding-bottom: 15px; }
-  .perfil_persona p {
-    font-size: 17px;
-    font-family: "Roboto", sans-serif;
-    font-weight: normal;
-    letter-spacing: 0.3px;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: #fcc92f; }
-
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=redport.css.map */

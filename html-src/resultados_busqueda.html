@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
   <!--familia de íconos-->
    <link href="https://file.myfontastic.com/KHbqgc9xxoCbZJYRdioaqd/icons.css" rel="stylesheet">
-   <link rel='stylesheet' type='text/css' href='sass/styles.css' />
+   <link rel='stylesheet' type='text/css' href='css/redport.css' />
    <!--api de mapbox-->
   <script src='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
@@ -21,21 +21,32 @@
    <!-- ======= header======= -->
   <div class="header2">
     <div class="back-button"><a href="home.html"><div class="rpicon-back"></div></a></div>
-    <div class="title_header"><h1>Reportar</h1>
-  </div>
+    <div class="title_header"><h1>Resultados</h1>
+    </div>
   </div>
 
-<div class="container">
-     <h1>Escribe tu reporte</h1>
+<div class="container_search">
+    <form action="">
+      <a href="resultados_busqueda.html" class="rpicon-search"></a>
+      <input class="input_search" type="text" placeholder="Buscar a alguien" id="search_1">
+      <label for="search_1"></label>
+    </form>
+  </div>
 
-  <form action="" class="form-report_2">
-<textarea class="description__box" type="text" id="description" name="título" placeholder="Escribe aquí tu reporte" rows="10" cols="40"></textarea>
-<label class="description_form_input" for="description"><h2> </h2></label>
-</form>
+      <div class="container_results">
+
+        <h1>No se encontraron resultados</h1>
+      <div class="search_message">
+        <h2>¡No te desanimes!</h2>
+        <p>¿Deseas añadir a esta persona<br>  a tu lista de búsqueda?</p>
+        <!--<div class="go-button"><a href="guardar_busqueda.html"><div class="rpicon-flecha"></div></a></div>
+      </div>-->
+      <div class="container_button">
+    <a class="button_two_esp" href="home.html#mi_ficha">Sí, guardar</a>
+    <a class="button_two_esp-2" href="home.html">Ahora no</a>      
 </div>
-
- <a class="button" href="home.html#reportes">Publicar</a>
-  </div>
+      </div>
+    </div>
   </div>
  </body>
 </html>
