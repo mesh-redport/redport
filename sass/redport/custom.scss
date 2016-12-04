@@ -30,9 +30,20 @@ html {
 .uc{text-transform: uppercase;}
 
 .scroll-section{
-	height: 100%;
+	min-height: 100%;
 	padding-top: 150px;
 	&:nth-child(odd){
 		background-color: transparentize(#FEC709, .2);
 	}
+}
+
+.profile{
+	margin: 1em 2em 3em 0;
+	font-size: 85%;
+}
+
+footer{
+	background-color: $text-color;
+	color: transparentize($white, .75);
+	min-height: 200px;
 }
