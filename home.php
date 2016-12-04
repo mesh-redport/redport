@@ -4,42 +4,35 @@ include "conUCV.php";
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>redport</title>
   <!--Estilos css (sass)-->
-  <link rel='stylesheet' type='text/css' href='sass/main.css' />
+  <link rel='stylesheet' type='text/css' href='css/redport.css' />
   <!--Familia tipográfica Roboto (google fonts)-->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">-->
+  <link rel='stylesheet' type='text/css' href='css/font.css' />
   <!--familia de íconos-->
-   <link href="https://file.myfontastic.com/KHbqgc9xxoCbZJYRdioaqd/icons.css" rel="stylesheet">
-   <link rel='stylesheet' type='text/css' href='css/redport.css' />
-   <!--api de mapbox-->
+  <!--<link href="https://file.myfontastic.com/KHbqgc9xxoCbZJYRdioaqd/icons.css" rel="stylesheet">-->
+   <link rel='stylesheet' type='text/css' href='css/style.css' />
+  <!--api de mapbox-->
   <script src='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
 </head>
- <body>
-   <div class="pagina_test">
-   <!-- ======= header======= -->
+
+<body>
+  <div class="pagina_test">
+<!-- ======= header======= -->
   <div class="header">
-    <div class="message-button"><a href="mensajes.html"><div class="rpicon-message"></div></a></div>
-    <div class="title_header"><div class="logo">
-    <img src="img/Logo_redport_web.png" alt="logo_redport">
-  </div></div>
+    <div class="title_header">
+      <div class="logo">
+        <img src="img/Logo_redport_web.png" alt="logo_redport">
+      </div>
+    </div>
     <div class="menu-button"><a href="#"><div class="rpicon-menu"></div></a></div>
-   <!-- <div class="back-button"><a href="formulario_1.html"><div class="rpicon-back"></div></a></div>-->
-    <!--<div class="message-button"><a href="mensajes.html"><div class="rpicon-message"></div></a></div>-->
-    
-   <!--<div class="navbar">
-      <ul class="navbar_content">
-        <a href="reportar.html" class="navbar-button"><li>Reporte</li></a>
-        <a href="estado_hogar.html" class="navbar-button"><li>Hogar</li></a>
-        <a href="reportar_entorno.html" class="navbar-button"><li>Entorno</li>
-      </ul>
-    </div>-->
   </div>
 
+    <!--Inicio menú lateral-->
     <nav class="menu_nav">
       <ul>
         <li><a href="home.html">Inicio</a></li>
@@ -49,16 +42,9 @@ include "conUCV.php";
         <li><a href="reportar_entorno.html">entorno</a></li>
         <li><a href="home.html#reportes">últimos reportes</a></li>
       </ul>
-
     </nav>
-<!--
-<div class="container_search">
-    <form action="">
-      <a href="resultados_busqueda.html" class="rpicon-search"></a>
-      <input class="input_search" type="text" placeholder="Buscar a alguien" id="search_1">
-      <label for="search_1"></label>
-    </form>
-  </div>-->
+    <!--Fin menú lateral-->
+<!-- ======= Fin header======= -->
 
   <?php
 
@@ -104,20 +90,13 @@ include "conUCV.php";
       </table>
   </div>
 </div>
+
   <div class="container_button">
      <a id="btn_display" class="button_two_event" href="#">Ver alertas</a>
-    <a class="button_two_event" href="eventos.html">ver registro</a>
-       
-</div>
+    <a class="button_two_event" href="eventos.html">ver registro</a>    
+  </div>
 
 <div id="display_content" class="effects">
-      <!--<div class="effect">
-      <div class="rpicon-tsunami"></div>
-    </div>
-    <div class="effect">
-      <div class="rpicon-rupture-home"></div>
-  </div>-->
-
   <h1 id="title_form">Alertas</h1>
 
   <div class="alert">
@@ -129,7 +108,6 @@ include "conUCV.php";
 
       echo '<span class="alert_date">'.$row["fecha"].'</span><span class="alert_hour">'.$row["lugar"].'</span>';
       echo '<p class="alerts">'.$row["detalle"].'</p>';
-
 
     } ?>
   </div>
@@ -350,7 +328,7 @@ include "conUCV.php";
 
      personas reportadas</p>
      <a class="button_two" href="personas_reportadas.php?rut=<?php echo $_REQUEST['rut'];?>">ver más</a>
-   </div>
+  </div>
    <div class="map">
       
       <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3345.0698151437036!2d-71.58095672261143!3d-33.02829109958188!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1468279338455" width="347" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
@@ -372,51 +350,44 @@ include "conUCV.php";
    </div>
 </div>
 
-  <div class="container" id="reportes">
-
-    <h1><a name="reportes">Últimos reportes cerca<br>de Usted</a></h1>
-
-<div style="height: 150px;">
-<form action="#" class="form-report" id="formulariocomentarios">
-        
-
-        <textarea class="report__box" type="text" id="comentario" name="título" placeholder="Escribe aquí tu reporte" rows="5" cols="5"></textarea>
-        
-<div class="container_button">
+<!-- =====Inicio caja de comentarios===== -->
+<div class="container" id="reportes">
+  <h1><a name="reportes">Últimos reportes cerca<br>de Usted</a></h1>
+<!--Comentar-->
+  <div style="height: 150px;">
+    <form action="#" class="form-report" id="formulariocomentarios">
+      <textarea class="report__box" type="text" id="comentario" name="título" placeholder="Escribe aquí tu reporte" rows="5" cols="5"></textarea>     
+      <div class="container_button">
         <button id="btn_reportar" class="button_comment" type="submit">Reportar</button>
-</div>
+      </div>
         <input type="text" hidden id="rut" name="rut" value="<?php echo $_REQUEST['rut']; ?>">
         <input type="text" hidden id="comentarioM" name="comentarioM" value="">
         <input type="text" hidden id="cord1C" name="cord1C" value="<?php echo $fila['cord1']; ?>">
         <input type="text" hidden id="cord2C" name="cord2C">
-
-
-</form>
+    </form>
 </div>
 
-    <div id="reportesAJAX">
+  <div id="reportesAJAX">
 
-<!-- caja de comentarios -->
-<?php
+    <?php
 
+    function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
-function distance($lat1, $lon1, $lat2, $lon2, $unit) {
+      $theta = $lon1 - $lon2;
+      $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+      $dist = acos($dist);
+      $dist = rad2deg($dist);
+      $miles = $dist * 60 * 1.1515;
+      $unit = strtoupper($unit);
 
-  $theta = $lon1 - $lon2;
-  $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
-  $dist = acos($dist);
-  $dist = rad2deg($dist);
-  $miles = $dist * 60 * 1.1515;
-  $unit = strtoupper($unit);
-
-  if ($unit == "K") {
-      return ($miles * 1.609344);
-  } else if ($unit == "N") {
-      return ($miles * 0.8684);
-  } else {
-      return $miles;
-  }
-}
+      if ($unit == "K") {
+          return ($miles * 1.609344);
+      } else if ($unit == "N") {
+          return ($miles * 0.8684);
+      } else {
+          return $miles;
+      }
+    }
 
 //TU USUARIO
 $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and registroIP = "'.ip2long($_REQUEST['rut']).'" and detalle = "'.$_SERVER['HTTP_USER_AGENT'].'" LIMIT 1';
@@ -451,21 +422,21 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
 
             if($distancia_real <= 2){
                 echo'<div class="container_report">
-          <ul id="reports_list" class="container_reports">
-            <li>
-              <a href="ficha_persona.html">
-                <div class="user_avatar"><div class="rpicon-user-';
-                if($fila2['estado'] == 0) echo 'good';
-                else echo 'bad';
+            <ul id="reports_list" class="container_reports">
+              <li>
+                <a href="ficha_persona.html">
+                  <div class="user_avatar"><div class="rpicon-user-';
+                  if($fila2['estado'] == 0) echo 'good';
+                  else echo 'bad';
 
 
-                echo '-small"></div></div>
-                <div class="comment_box">
-                    <div class="username">
-                    <h2 id="name" class="username"> A ';
-                if($distancia_real >=1) echo round($distancia_real,0)." Km.";
-                else echo round($distancia_real*1000,0)." Mt.";
-                echo '</h2>
+                  echo '-small"></div></div>
+                  <div class="comment_box">
+                      <div class="username">
+                      <h2 id="name" class="username"> A ';
+                  if($distancia_real >=1) echo round($distancia_real,0)." Km.";
+                  else echo round($distancia_real*1000,0)." Mt.";
+                  echo '</h2>
                 </a>
                     <span class="comment_date">';
                 echo $fila2['fecha'].'</span>
@@ -476,62 +447,56 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
             </li>
           </ul>
         </div>';
-            }
-
-
-          
+            }          
           }
         }
 ?>
 </div>
 
+      <!-- botón ver más reportes-->
+      <div class="button_more">
+        <a href="#" class="text_button_more">ver más reportes<div class="rpicon-down"></div></a>
+      </div>
 
-<!-- botón ver más reportes-->
-     <div class="button_more">
-       <a href="#" class="text_button_more">ver más reportes<div class="rpicon-down"></div></a>
-     </div>
     </div>
   </div>
+</div>
+<!-- =====Fin caja de comentarios===== -->
 
-  </div>
-<script src="js/jquery-3.0.0.min.js"></script>
-<script src="js/main.js"></script>
-<script>
-//reportes
-var timeout = setInterval(reload, 3000);
-function reload(){
-  $('#reportesAJAX').load(location.href + ' #reportesAJAX');
-}
-//sensores
-var timeout1 = setInterval(reloadS, 60000);
-function reloadS(){
-  $('#indicatorsAJAX').load(location.href + ' #indicatorsAJAX');
-}
+  <script src="js/jquery-3.0.0.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  //reportes
+    var timeout = setInterval(reload, 3000);
+    function reload(){
+      $('#reportesAJAX').load(location.href + ' #reportesAJAX');
+    }
+  //sensores
+    var timeout1 = setInterval(reloadS, 60000);
+    function reloadS(){
+      $('#indicatorsAJAX').load(location.href + ' #indicatorsAJAX');
+    }
 
+    $('#comentario').change(function() {
+        document.getElementById("comentarioM").value = document.getElementById("comentario").value;
+        document.getElementById("cord1C").value = "<?php echo $coordenadaX; ?>";
+        document.getElementById("cord2C").value = "<?php echo $coordenadaY; ?>";
+          // Change occurred so count chars...
+        });
 
-$('#comentario').change(function() {
-    document.getElementById("comentarioM").value = document.getElementById("comentario").value;
-    document.getElementById("cord1C").value = "<?php echo $coordenadaX; ?>";
-    document.getElementById("cord2C").value = "<?php echo $coordenadaY; ?>";
-      // Change occurred so count chars...
+    /* Data Insert Starts Here */
+       $(document).on('submit', '#formulariocomentarios', function() {
+
+        $.post("enviarComentario_POST.php", $(this).serialize())
+        .done(function(data){
+         $("#dis").fadeIn('slow', function(){
+         $("#dis").html('<div class="alert alert-info">'+data+'</div>');
+         $("#emp-SaveForm")[0].reset();
+         }); 
+       });   
+      return false;
     });
-
-
-/* Data Insert Starts Here */
-   $(document).on('submit', '#formulariocomentarios', function() {
-
-    $.post("enviarComentario_POST.php", $(this).serialize())
-    .done(function(data){
-     $("#dis").fadeIn('slow', function(){
-     $("#dis").html('<div class="alert alert-info">'+data+'</div>');
-     $("#emp-SaveForm")[0].reset();
-     }); 
-   });   
-  return false;
-});
-/* Data Insert Ends Here */
-
-</script>
-
+    /* Data Insert Ends Here */
+  </script>
  </body>
 </html>
