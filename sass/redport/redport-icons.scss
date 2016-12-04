@@ -1,0 +1,157 @@
+
+
+@font-face {
+  font-family: "redport-icons";
+  src:url($font-path+"redport-icons.eot");
+  src:url($font-path+"redport-icons.eot?#iefix") format("embedded-opentype"),
+    url($font-path+"redport-icons.woff") format("woff"),
+    url($font-path+"redport-icons.ttf") format("truetype"),
+    url($font-path+"redport-icons.svg#redport-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "redport-icons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="rpicon-"]:before,
+[class*=" rpicon-"]:before {
+  font-family: "redport-icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rpicon-back:before {
+  content: "\61";
+}
+.rpicon-check:before {
+  content: "\62";
+}
+.rpicon-close:before {
+  content: "\63";
+}
+.rpicon-edit:before {
+  content: "\64";
+}
+.rpicon-flecha:before {
+  content: "\65";
+}
+.rpicon-flecha-iz:before {
+  content: "\66";
+}
+.rpicon-home:before {
+  content: "\67";
+}
+.rpicon-more:before {
+  content: "\68";
+}
+.rpicon-search:before {
+  content: "\69";
+}
+.rpicon-user-bad:before {
+  content: "\6a";
+}
+.rpicon-user-good:before {
+  content: "\6b";
+}
+.rpicon-user-bad-small:before {
+  content: "\6c";
+}
+.rpicon-user-good-small:before {
+  content: "\6d";
+}
+.rpicon-tsunami:before {
+  content: "\71";
+}
+.rpicon-rupture-home:before {
+  content: "\72";
+}
+.rpicon-chronic-patient:before {
+  content: "\73";
+}
+.rpicon-uv:before {
+  content: "\6e";
+}
+.rpicon-message:before {
+  content: "\76";
+}
+.rpicon-message-inv:before {
+  content: "\77";
+}
+.rpicon-down:before {
+  content: "\78";
+}
+.rpicon-menu:before {
+  content: "\79";
+}
+.rpicon-appartment:before {
+  content: "\7a";
+}
+.rpicon-cut-road:before {
+  content: "\41";
+}
+.rpicon-cut-bridge:before {
+  content: "\42";
+}
+.rpicon-landslide:before {
+  content: "\44";
+}
+.rpicon-crush:before {
+  content: "\45";
+}
+.rpicon-fire:before {
+  content: "\43";
+}
+.rpicon-hospital:before {
+  content: "\46";
+}
+.rpicon-refuge:before {
+  content: "\47";
+}
+.rpicon-collection-center:before {
+  content: "\48";
+}
+.rpicon-temperature:before {
+  content: "\70";
+}
+.rpicon-humedity:before {
+  content: "\6f";
+}
+.rpicon-injured:before {
+  content: "\75";
+}
+.rpicon-kid:before {
+  content: "\49";
+}
+.rpicon-old:before {
+  content: "\4a";
+}
+.rpicon-especial:before {
+  content: "\4b";
+}
+.rpicon-adult:before {
+  content: "\4c";
+}
+.rpicon-caught:before {
+  content: "\74";
+}
+.rpicon-dead:before {
+  content: "\4d";
+}
