@@ -27,7 +27,12 @@ html {
 	font-family: "Roboto Condensed";
 }
 
+.uc{text-transform: uppercase;}
+
 .scroll-section{
 	height: 100%;
 	padding-top: 150px;
+	&:nth-child(odd){
+		background-color: transparentize(#FEC709, .2);
+	}
 }
