@@ -38,12 +38,29 @@ html {
 }
 
 .profile{
-	margin: 1em 2em 3em 0;
-	font-size: 85%;
+		margin: 1em 2em 3em 0;
+	h3{
+		font-family: Roboto;
+		font-weight: 900;
+		font-size: 18px;
+		text-transform: uppercase;
+		letter-spacing: .1ex;
+	}
+	p{
+		font-size: 18px;
+		font-weight: 300;
+		
+	}
 }
 
 footer{
 	background-color: $text-color;
-	color: transparentize($white, .75);
+	color: transparentize($white, .3);
 	min-height: 200px;
+	
+	p{
+		padding: 2em 0 0 0;
+		font-size: 14px;
+		font-weight: 300;
+	}
 }
