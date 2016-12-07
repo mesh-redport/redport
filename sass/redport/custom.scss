@@ -23,6 +23,16 @@ html {
     }
 }
 
+h1.logo{
+	background-image: url('../img/redport-logo.png');
+	display: inline-block;
+	width: 400px;
+	height: 95px;
+	span{
+		display: none;
+	}
+}
+
 .condensed{
 	font-family: "Roboto Condensed";
 }
