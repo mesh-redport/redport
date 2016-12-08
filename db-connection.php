@@ -9,9 +9,9 @@
 
 error_reporting(E_ALL ^ E_DEPRECATED);
 
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "root";
-$password = "samsung";
+$password = "";
 //$password = ""; //PARA LOCALHOSTEAR SIN ROOT
 $dbname = "mesh_redport";
 
