@@ -42,7 +42,7 @@ file_put_contents("seed.txt", $file);
 
 
     <?php
-    include "conUCV.php";
+    include "db-connection.php";
 
     $fh = fopen('seed.txt','r');
     $cleanquery = "DELETE FROM mesh_redport.sensores WHERE DATE_FORMAT(STR_TO_DATE(fecha, '%d/%m/%Y'), '%Y-%m-%d') < DATE_SUB(NOW(), INTERVAL 10 DAY)";

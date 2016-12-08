@@ -1,5 +1,5 @@
 <?php
-include "conUCV.php";
+include "db-connection.php";
 
 $rut = $_REQUEST['rut'];
 $description = $_REQUEST['comentarioM'];

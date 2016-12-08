@@ -33,10 +33,6 @@ if (!$bd_seleccionada) {
 
 <!DOCTYPE html>
 <head>
-
     <meta name="theme-color" content="#ffce00" />
-
 </head>
-
-
 </html>

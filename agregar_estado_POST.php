@@ -5,7 +5,7 @@
  * Date: 02-10-2016
  * Time: 18:48
  */
-include "conUCV.php";
+include "db-connection.php";
 
 $rut = $_REQUEST['rut'];
 $datenow = date("d/m/y - H:i:s");
