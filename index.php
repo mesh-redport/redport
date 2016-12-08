@@ -14,15 +14,13 @@
   </div>
 
 <section class="content"></section>
-
 <div class="container_2">
   <a class="button_rut" href="#">
       Enviar SOS</a>
 </div>
 
 <div class="container">
-
-  <h1>REPÓRTATE</h1>
+  <h1>Repórtate</h1>
   <p>Repórta tu estado para que puedas recibir <b>ayuda</b> o los demás sepan que <b>estás bien</b></p>
   <div class="input_rut">
   <!--<label class="label_rut" for="rut" type="text">Ingresa tu rut</label>-->
@@ -41,13 +39,8 @@
  <!--<a class="button_rut" href="formulario_1.html">Ingresar</a>-->
 </div>
 
-
-
-
     <?php
-
     $shots = mysql_query("SELECT id,fecha,hora,tipo,lugar,alerta,intensidad,magnitud FROM mesh_redport.evento ORDER BY id DESC LIMIT 1;") or die(mysql_error());
-
     while($row = mysql_fetch_assoc($shots)) {
 
         if($row["alerta"] == "Temprana Preventiva"){

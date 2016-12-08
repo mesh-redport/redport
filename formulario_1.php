@@ -7,31 +7,29 @@
    
    <!-- ======= header======= -->
   <div class="header2">
-  	<div class="back-button"><a href="index.php"><div class="rpicon-back"></div></a></div>
-    <div class="title_header"><h1>
-
-			Bienvenido
-
-		</h1></div>
-
+  	<div class="back-button">
+  		<a href="index.php">
+  			<div class="rpicon-back"></div>
+  		</a></div>
+    <div class="title_header">
+    	<h1>Bienvenido</h1>
+    </div>
   </div>
 
   <div class="container">
+  	<h1 id="title_form">Usted es:</h1>
 
-  <h1 id="title_form">Usted es:</h1>
-
-  <div class="markers" >
-    <input type="radio" name="estate" id="checkbox_big_1" class="marker" onclick="checkType(this,0)"/>
-    <label for="checkbox_big_1" class="rpicon-toggle-small-inverse"><div class="rpicon-kid"></div><p class="text_marker"><br>Menor</p></label>
-    <input type="radio" name="estate" id="checkbox_big_2" class="marker" onclick="checkType(this,1)"/>
-    <label for="checkbox_big_2" class="rpicon-toggle-small-inverse"><div class="rpicon-adult"></div><p class="text_marker"><br>Adulto</p></label>
-    <input type="radio" name="estate" id="checkbox_big_3" class="marker" onclick="checkType(this,2)"/>
-    <label for="checkbox_big_3" class="rpicon-toggle-small-inverse"><div class="rpicon-old"></div><p class="text_marker"><br>3ª Edad</p></label>
-    <input type="radio" name="estate" id="checkbox_big_4" class="marker" onclick="checkType(this,3)"/>
-    <label for="checkbox_big_4" class="rpicon-toggle-small-inverse"><div class="rpicon-especial"></div><p class="text_marker"><br>Especial</p></label>
-  </div>
+	<div class="markers" >
+		<input type="radio" name="estate" id="checkbox_big_1" class="marker" onclick="checkType(this,0)"/>
+		<label for="checkbox_big_1" class="rpicon-toggle-small-inverse"><div class="rpicon-kid"></div><p class="text_marker"><br>Menor</p></label>
+		<input type="radio" name="estate" id="checkbox_big_2" class="marker" onclick="checkType(this,1)"/>
+		<label for="checkbox_big_2" class="rpicon-toggle-small-inverse"><div class="rpicon-adult"></div><p class="text_marker"><br>Adulto</p></label>
+	    <input type="radio" name="estate" id="checkbox_big_3" class="marker" onclick="checkType(this,2)"/>
+	    <label for="checkbox_big_3" class="rpicon-toggle-small-inverse"><div class="rpicon-old"></div><p class="text_marker"><br>3ª Edad</p></label>
+	    <input type="radio" name="estate" id="checkbox_big_4" class="marker" onclick="checkType(this,3)"/>
+	    <label for="checkbox_big_4" class="rpicon-toggle-small-inverse"><div class="rpicon-especial"></div><p class="text_marker"><br>Especial</p></label>
+	  </div>
 </div>
-
 
 <div id="container_p2" class="container">
 	<div class="form_container">
@@ -43,7 +41,6 @@
 	</div>
 
 	<div class="form_content">
-
 		<h1 id="title_form">Indica tu estado</h1>
 		<div class="toggle_box">
 		<div class="text_box">
