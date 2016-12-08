@@ -1,17 +1,14 @@
 <?php
-$file = file_get_contents("http://10.30.61.100");
-file_put_contents("seed.txt", $file);
+    $file = file_get_contents("http://10.30.61.100");
+    file_put_contents("seed.txt", $file);
 ?>
+
 <!DOCTYPE html>
 <!-- Template by quackit.com -->
 <html>
-<head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Modular Emergency Mesh MeM</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-</head>
+<?php include "head.php"; ?>
+
 <body>
 
 <header id="header">

@@ -1,12 +1,12 @@
-@charset "UTF-8";
+
 
 @font-face {
   font-family: "redport-icons";
-  src:url("../fonts/redport-icons.eot");
-  src:url("../fonts/redport-icons.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/redport-icons.woff") format("woff"),
-    url("../fonts/redport-icons.ttf") format("truetype"),
-    url("../fonts/redport-icons.svg#redport-icons") format("svg");
+  src:url($font-path+"redport-icons/redport-icons.eot");
+  src:url($font-path+"redport-icons/redport-icons.eot?#iefix") format("embedded-opentype"),
+    url($font-path+"redport-icons/redport-icons.woff") format("woff"),
+    url($font-path+"redport-icons/redport-icons.ttf") format("truetype"),
+    url($font-path+"redport-icons/redport-icons.svg#redport-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 
@@ -25,8 +25,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="rpicon-"]:before,
-[class*=" rpicon-"]:before {
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
   font-family: "redport-icons" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -38,120 +38,120 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.rpicon-back:before {
+.icon-back:before {
   content: "\61";
 }
-.rpicon-check:before {
+.icon-check:before {
   content: "\62";
 }
-.rpicon-close:before {
+.icon-close:before {
   content: "\63";
 }
-.rpicon-edit:before {
+.icon-edit:before {
   content: "\64";
 }
-.rpicon-flecha:before {
+.icon-flecha:before {
   content: "\65";
 }
-.rpicon-flecha-iz:before {
+.icon-flecha-iz:before {
   content: "\66";
 }
-.rpicon-home:before {
+.icon-home:before {
   content: "\67";
 }
-.rpicon-more:before {
+.icon-more:before {
   content: "\68";
 }
-.rpicon-search:before {
+.icon-search:before {
   content: "\69";
 }
-.rpicon-user-bad:before {
+.icon-user-bad:before {
   content: "\6a";
 }
-.rpicon-user-good:before {
+.icon-user-good:before {
   content: "\6b";
 }
-.rpicon-user-bad-small:before {
+.icon-user-bad-small:before {
   content: "\6c";
 }
-.rpicon-user-good-small:before {
+.icon-user-good-small:before {
   content: "\6d";
 }
-.rpicon-tsunami:before {
+.icon-tsunami:before {
   content: "\71";
 }
-.rpicon-rupture-home:before {
+.icon-rupture-home:before {
   content: "\72";
 }
-.rpicon-chronic-patient:before {
+.icon-chronic-patient:before {
   content: "\73";
 }
-.rpicon-uv:before {
+.icon-uv:before {
   content: "\6e";
 }
-.rpicon-message:before {
+.icon-message:before {
   content: "\76";
 }
-.rpicon-message-inv:before {
+.icon-message-inv:before {
   content: "\77";
 }
-.rpicon-down:before {
+.icon-down:before {
   content: "\78";
 }
-.rpicon-menu:before {
+.icon-menu:before {
   content: "\79";
 }
-.rpicon-appartment:before {
+.icon-appartment:before {
   content: "\7a";
 }
-.rpicon-cut-road:before {
+.icon-cut-road:before {
   content: "\41";
 }
-.rpicon-cut-bridge:before {
+.icon-cut-bridge:before {
   content: "\42";
 }
-.rpicon-landslide:before {
+.icon-landslide:before {
   content: "\44";
 }
-.rpicon-crush:before {
+.icon-crush:before {
   content: "\45";
 }
-.rpicon-fire:before {
+.icon-fire:before {
   content: "\43";
 }
-.rpicon-hospital:before {
+.icon-hospital:before {
   content: "\46";
 }
-.rpicon-refuge:before {
+.icon-refuge:before {
   content: "\47";
 }
-.rpicon-collection-center:before {
+.icon-collection-center:before {
   content: "\48";
 }
-.rpicon-temperature:before {
+.icon-temperature:before {
   content: "\70";
 }
-.rpicon-humedity:before {
+.icon-humedity:before {
   content: "\6f";
 }
-.rpicon-injured:before {
+.icon-injured:before {
   content: "\75";
 }
-.rpicon-kid:before {
+.icon-kid:before {
   content: "\49";
 }
-.rpicon-old:before {
+.icon-old:before {
   content: "\4a";
 }
-.rpicon-especial:before {
+.icon-especial:before {
   content: "\4b";
 }
-.rpicon-adult:before {
+.icon-adult:before {
   content: "\4c";
 }
-.rpicon-caught:before {
+.icon-caught:before {
   content: "\74";
 }
-.rpicon-dead:before {
+.icon-dead:before {
   content: "\4d";
 }

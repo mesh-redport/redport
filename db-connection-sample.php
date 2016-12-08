@@ -12,7 +12,6 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 $servername = "localhost";
 $username = "root";
 $password = "password";
-//$password = ""; //PARA LOCALHOSTEAR SIN ROOT
 $dbname = "mesh_redport";
 
 
@@ -30,9 +29,3 @@ if (!$bd_seleccionada) {
     die ('No se puede usar : ' . mysql_error());
 }
 ?>
-
-<!DOCTYPE html>
-<head>
-    <meta name="theme-color" content="#ffce00" />
-</head>
-</html>

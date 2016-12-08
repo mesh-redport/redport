@@ -1,31 +1,12 @@
-<?php
-include "db-connection.php";
+<?php include "db-connection.php"; ?>
 
-
-
-?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<?php include "head.php"; ?>
 
-	<meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>redport</title>
-  <!--Estilos css (sass)-->
-  <link rel='stylesheet' type='text/css' href='sass/main.css' />
-  <!--Familia tipográfica Roboto (google fonts)-->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel= "stylesheet">
-  <!--familia de íconos-->
-  <link href="https://file.myfontastic.com/KHbqgc9xxoCbZJYRdioaqd/icons.css" rel="stylesheet">
-  <link rel='stylesheet' type='text/css' href='css/redport.css' />
-  <!--api de mapbox-->
-  <script src='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
-</head>
- <body onload="getLocation()">
-   <div class="pagina_esp">
-   <!-- ======= header======= -->
+<body onload="getLocation()">
+  <div class="pagina_esp">
+  <!-- ======= header======= -->
   <div class="header2">
     <div class="logo">
     <img src="img/Logo_redport_web.png" alt="logo_redport">
@@ -41,8 +22,8 @@ include "db-connection.php";
 
 <div class="container">
 
-  <h1 class="h1_inverse">REPÓRTATE</h1>
-  <p class="p_inverse">Repórta tu estado para que puedas recibir <b>ayuda</b> o los demás sepan que <b>estás bien</b></p>
+  <h1>REPÓRTATE</h1>
+  <p>Repórta tu estado para que puedas recibir <b>ayuda</b> o los demás sepan que <b>estás bien</b></p>
   <div class="input_rut">
   <!--<label class="label_rut" for="rut" type="text">Ingresa tu rut</label>-->
 

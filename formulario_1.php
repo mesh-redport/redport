@@ -1,21 +1,10 @@
-<?php
-include "db-connection.php";
-
-?>
+<?php include "db-connection.php"; ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
-
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>redport</title>
-  <link rel='stylesheet' type='text/css' href='sass/main.css' />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-  <link href="https://file.myfontastic.com/KHbqgc9xxoCbZJYRdioaqd/icons.css" rel="stylesheet">
-<link rel='stylesheet' type='text/css' href='css/redport.css' />
-</head>
+<?php include "head.php"; ?>
 <body>
    <div class="pagina_esp">
+   
    <!-- ======= header======= -->
   <div class="header2">
   	<div class="back-button"><a href="index.php"><div class="rpicon-back"></div></a></div>

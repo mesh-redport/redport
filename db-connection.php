@@ -12,10 +12,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
-//$password = ""; //PARA LOCALHOSTEAR SIN ROOT
 $dbname = "mesh_redport";
-
-
 $enlace = mysql_connect($servername, $username, $password);
 
 mysql_set_charset('utf8',$enlace);
@@ -30,9 +27,3 @@ if (!$bd_seleccionada) {
     die ('No se puede usar : ' . mysql_error());
 }
 ?>
-
-<!DOCTYPE html>
-<head>
-    <meta name="theme-color" content="#ffce00" />
-</head>
-</html>

@@ -1,4 +1,6 @@
-.button 
+
+button,
+.button
 
 	width: $ancho_btn_grande
 	height: 70px
@@ -20,17 +22,15 @@
 	box-shadow: 0 0 $on_color inset
 
 	&:active 
-
 		color: $background_color !important
 		transition: $transition_fast
 		transform: scale(.98)
 		box-shadow: 0 5px $dark_yellow
 		
 
-	//a:active
+	&:disabled
+		background-color: transparentize($button_color, .8)
 
-		//color: $font-color !important
-		//text-shadow: 0.2px 0.8px 1px rgba(0, 0, 0, 0.8)
 
 .rpicon-more:active
 	
