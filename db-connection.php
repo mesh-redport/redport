@@ -11,7 +11,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 
 $servername = "127.0.0.1";
 $username = "root";
-$password = "";
+$password = "samsung";
 $dbname = "mesh_redport";
 $enlace = mysql_connect($servername, $username, $password);
 

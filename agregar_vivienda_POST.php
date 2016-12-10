@@ -8,8 +8,10 @@
 include "db-connection.php";
 
 $rut = $_REQUEST['rut'];
-$lati = $_REQUEST['latitu'];
-$longi = $_REQUEST['longitu'];
+$tipo = $_REQUEST['tipo'];
+$estado = $_REQUEST['estado'];
+$fuga = $_REQUEST['fuga'];
+$albergue = $_REQUEST['albergue'];
 $long = ip2long($rut);
 
 
@@ -17,7 +19,7 @@ $long = ip2long($rut);
 $datenow = date("d/m/y - H:i:s");
 $c1 = $lati;
 $c2 = $longi;
-$sql = 'INSERT INTO personas (registroIP,dateLogin, cord1, cord2,detalle) VALUES("'.$long.'","'.$datenow.'","'.$c1.'","'.$c2.'","'.$_SERVER['HTTP_USER_AGENT'].'")';
+$sql = 'INSERT INTO vivienda (idcreador,fecha,tipo,estado,fugas,albergue) VALUES("'.$long.'","'.$datenow.'","'.$tipo.'","'.$estado.'","'.$fuga.'","'.$albergue.'")';
 echo $sql;
 $resultado = mysql_query($sql, $enlace);
 
@@ -28,7 +30,7 @@ if (!$resultado) {
 
 }
 
-header("Location: formulario_1.php?rut=$rut");
+header("Location: home.php?rut=$rut");
 die();
 
 ?>
