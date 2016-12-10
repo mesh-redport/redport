@@ -3,9 +3,10 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 173.3 484.4" style="enable-background:new 0 0 173.3 484.4;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st0{opacity:0.5;fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st3{fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 </style>
 <path class="st0" d="M140.9,434.7c-1.9-5-10.4-34.9-11.9-38.9c-2.4-6.4-13.6-6.2-20.7-2.4c-7.8,4.1-54.8,34.4-65.5,41
 	c-7.4,4.6-4.8,12.1,7.6,12.4c8.7,0.2,72.4-3,79.8-3.3C137,443.2,143.5,441.6,140.9,434.7z M51.1,441.7c-4,0-7.2-1.2-7.2-2.6
@@ -42,23 +43,23 @@
 	S133.2,158.6,129.2,158.6z"/>
 <g>
 	<g>
-		<polygon class="st0" points="62.2,362.2 62.2,403.3 75,409.8 115.4,383.8 115.4,342.7 102.6,336.2 		"/>
+		<polygon class="st3" points="62.2,362.2 62.2,403.3 75,409.8 115.4,383.8 115.4,342.7 102.6,336.2 		"/>
 		<polyline class="st2" points="115.4,342.7 75,368.7 75,409.8 		"/>
 	</g>
-	<line class="st0" x1="75" y1="368.7" x2="62.2" y2="362.2"/>
+	<line class="st3" x1="75" y1="368.7" x2="62.2" y2="362.2"/>
 </g>
 <g>
 	<g>
-		<polygon class="st0" points="74.4,314.1 74.4,341.2 87.2,347.7 114.8,329.5 114.8,302.4 102,295.9 		"/>
+		<polygon class="st3" points="74.4,314.1 74.4,341.2 87.2,347.7 114.8,329.5 114.8,302.4 102,295.9 		"/>
 		<polyline class="st2" points="114.8,302.4 87.2,320.7 87.2,347.7 		"/>
 	</g>
-	<line class="st0" x1="87.2" y1="320.7" x2="74.4" y2="314.1"/>
+	<line class="st3" x1="87.2" y1="320.7" x2="74.4" y2="314.1"/>
 </g>
 <g>
 	<g>
-		<polygon class="st0" points="74.4,273.3 74.4,300.3 87.2,306.8 114.8,288.6 114.8,261.5 102,255 		"/>
+		<polygon class="st3" points="74.4,273.3 74.4,300.3 87.2,306.8 114.8,288.6 114.8,261.5 102,255 		"/>
 		<polyline class="st2" points="114.8,261.5 87.2,279.8 87.2,306.8 		"/>
 	</g>
-	<line class="st0" x1="87.2" y1="279.8" x2="74.4" y2="273.3"/>
+	<line class="st3" x1="87.2" y1="279.8" x2="74.4" y2="273.3"/>
 </g>
 </svg>
