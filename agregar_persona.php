@@ -33,16 +33,11 @@ include "db-connection.php";
 </div>
 
 	   <form action="volver_d_persona_POST.php" method="POST">
-<!--<div class="container">
-	<h1 id="title_form">Ingresa el nombre</h1>
 
+		    <input hidden type="text" id="tipo" name="tipo" value="">
+			  <input hidden type="text" id="rut" name="rut" value=<?php echo $_REQUEST['rut']; ?>>
+			  <input hidden type="text" id="estado" name="estado" value="">
 
-	<div class="input_rut">-->
-		    <input  type="text" id="tipo" name="tipo" value="">
-			<input  type="text" id="rut" name="rut" value=<?php echo $_REQUEST['rut']; ?>>
-			<input  type="text" id="estado" name="estado" value="">
-	<!--</div>
-</div>-->
 
 
 <div class="container">
@@ -70,7 +65,7 @@ include "db-connection.php";
 		  	<label for="toggle_small_11" class="rpicon-toggle-small"><p class="texto-toggle">Fallecido</p></label>
 		</div>
   </div>
-   
+
 </div>
 
 		   <input class="button_ip" type="submit" />

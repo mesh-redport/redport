@@ -69,7 +69,7 @@
 
 <div class="container_button">
  <a id="btn_display" class="button_two_event" href="#">Ver alertas</a>
- <a class="button_two_event" href="eventos.html">ver registro</a>    
+ <a class="button_two_event" href="eventos.html">ver registro</a>
 </div>
 
 <div id="display_content" class="effects">
@@ -155,7 +155,7 @@
       <div class="feed-data">: gets a pass from <span><?php echo $row["tipo"]; ?></span> and he takes a shot!</div>
     </div>-->
     <?php } ?>
-    
+
 
   </div>
 </div>
@@ -238,17 +238,10 @@
             echo '</li>';
             echo '</div>';
 
-          //echo "{$clave}";
-          //print_r($array);
+
           }
         }
-      // ...hasta que finalmente el penúltimo valor se copia al último valor
 
-      // salida:
-      // 0 => 2 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 2 )
-      // 1 => 4 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 4 )
-      // 2 => 6 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 6 )
-      // 3 => 6 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 6 )*/
         ?>
 
       </div>
@@ -268,22 +261,51 @@
   </div>
 
   <div id="hogar" class="container">
-    <a class="button_edit" href="estado_hogar.html"><div class="rpicon-edit"></div></a>
+    <a class="button_edit" href="estado_hogar.php?rut=<?php echo $_REQUEST['rut']; ?>"><div class="rpicon-edit"></div></a>
     <div class="edit_title"><h1 class="title-icon">Estado de mi hogar</h1></div>
-    <div class="home-icon-container"><div class="rpicon-home"></div></div>
-    <h2 class="texto_vivienda">Casa</h2>
 
-    <ul class="name_list">
-      <div class="list_box">
-        <div class="text_box_2">
-          <li>Daño menor</li>
-        </div>
-        <div class="text_box_2">
-          <li>Sin fugas</li>
-        </div>
-        <div class="text_box_2">
-          <li>No necesita albergue</li>
-        </div>
+
+    <?php
+
+    $casas = mysql_query("SELECT id,idcreador,tipo,estado,fugas,albergue,fecha FROM mesh_redport.vivienda WHERE idcreador = '".ip2long($_REQUEST['rut'])."' ORDER BY id DESC LIMIT 1;") or die(mysql_error());
+
+    while($row = mysql_fetch_assoc($casas)) {
+
+      if($row["tipo"] == "1"){
+        echo '<div class="home-icon-container"><div class="rpicon-appartment"></div></div><h2 class="texto_vivienda">Departamento</h2>';
+      }else {
+        echo '<div class="home-icon-container"><div class="rpicon-home"></div></div><h2 class="texto_vivienda">Casa</h2>';
+      }
+      echo '<ul class="name_list"><div class="list_box">';
+
+      if($row["estado"] == "0"){
+        echo '<div class="text_box_2"><li>Sin Daños</li></div>';
+      }else if($row["estado"] == "1"){
+        echo '<div class="text_box_2"><li>Daño menor</li></div>';
+      }else if($row["estado"] == "2"){
+        echo '<div class="text_box_2"><li>Daño mayor recuperable</li></div>';
+      }else if($row["estado"] == "3"){
+        echo '<div class="text_box_2"><li>Destrudia / Irrecuperable</li></div>';
+      }
+
+      if($row["fugas"] == "0"){
+        echo '<div class="text_box_2"><li>Sin Fugas</li></div>';
+      }else if($row["fugas"] == "1"){
+        echo '<div class="text_box_2"><li>Fuga de Gas</li></div>';
+      }else if($row["fugas"] == "2"){
+        echo '<div class="text_box_2"><li>Fuga de Agua</li></div>';
+      }
+
+      if($row["albergue"] == "1"){
+        echo '<div class="text_box_2"><li>No necesita albergue</li></div>';
+      }else if($row["albergue"] == "0"){
+        echo '<div class="text_box_2"><li>Necesita albergue</li></div>';
+      }
+
+    }
+
+      ?>
+
       </div>
     </ul>
   </div>
@@ -306,7 +328,7 @@
      <a class="button_two" href="personas_reportadas.php?rut=<?php echo $_REQUEST['rut'];?>">ver más</a>
    </div>
    <div class="map">
-    
+
     <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3345.0698151437036!2d-71.58095672261143!3d-33.02829109958188!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1468279338455" width="347" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
     <!--Mapbox screenshot-->
     <!--<img class="map_content" src="https://api.mapbox.com/styles/v1/cleudio/ciqiooxr70000bjm0krbou6i0/static/-71.579739,-33.029077,12.96,-9.96,30.00/347x250?access_token=pk.eyJ1IjoiY2xldWRpbyIsImEiOiJjaWkxNmUyeGIwMDM5dDNrZnI1N2Y1eGxrIn0.gZNnFCWNxfxUD50feHVsyg" width="347" height="250" alt="Dark" />-->
@@ -332,7 +354,7 @@
   <!--Comentar-->
   <div style="height: 150px;">
     <form action="#" class="form-report" id="formulariocomentarios">
-      <textarea class="report__box" type="text" id="comentario" name="título" placeholder="Escribe aquí tu reporte" rows="5" cols="5"></textarea>     
+      <textarea class="report__box" type="text" id="comentario" name="título" placeholder="Escribe aquí tu reporte" rows="5" cols="5"></textarea>
       <div class="container_button">
         <button id="btn_reportar" class="button_comment" type="submit">Reportar</button>
       </div>
@@ -419,11 +441,11 @@
                         <div class="comment_content"><p class="comment">'.$fila2['comentario'].'</p></div>
                       </div>
                     </div>
-                    
+
                   </li>
                 </ul>
               </div>';
-            }          
+            }
           }
         }
         ?>
@@ -468,8 +490,8 @@
      $("#dis").fadeIn('slow', function(){
        $("#dis").html('<div class="alert alert-info">'+data+'</div>');
        $("#emp-SaveForm")[0].reset();
-     }); 
-   });   
+     });
+   });
     return false;
   });
   /* Data Insert Ends Here */
