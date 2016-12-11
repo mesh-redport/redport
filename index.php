@@ -15,8 +15,16 @@
 
 <section class="content"></section>
 <div class="container_2">
-  <a class="button_rut" href="#">
-      Enviar SOS</a>
+  <form action="agregar_SOS_POST.php" class="login-rut" method="POST">
+      <!--<form action="formulario_1.php" class="login-rut" method="POST">-->
+
+      <input hidden type="text" id="rut1" name="rut1" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
+      <input hidden type="text" id="latitu1" name="latitu1" value="">
+      <input hidden type="text" id="longitu1" name="longitu1" value="">
+
+      <button id="btn_reportar" class="button_rut" onclick="getLocation()" type="submit" disabled >Enviar SOS</button>
+      <!--<input class="button_rut" type="k  submit" text="Reportarme" />-->
+  </form>
 </div>
 
 <div class="container">
@@ -150,6 +158,8 @@
    <script>
        var y = document.getElementById("latitu");
        var z = document.getElementById("longitu");
+       var y1 = document.getElementById("latitu1");
+       var z1 = document.getElementById("longitu1");
 
        function getLocation() {
            if (navigator.geolocation) {
@@ -161,6 +171,9 @@
                y.value = "" + position.coords.latitude;
 
                z.value = "" + position.coords.longitude;
+               y1.value = "" + position.coords.latitude;
+
+               z1.value = "" + position.coords.longitude;
                document.getElementById("btn_reportar").disabled = false;
        }
    </script>

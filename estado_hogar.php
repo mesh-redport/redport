@@ -82,11 +82,11 @@
 
 <form action="agregar_vivienda_POST.php" method="POST">
 
-	 		<input  type="text" id="tipo" name="tipo" value="0">
-			<input  type="text" id="estado" name="estado" value="0">
-			<input  type="text" id="fuga" name="fuga" value="0">
-			<input  type="text" id="albergue" name="albergue" value="0">
- 			<input  type="text" id="rut" name="rut" value=<?php echo $_REQUEST['rut']; ?>>
+	 		<input hidden type="text" id="tipo" name="tipo" value="0">
+			<input hidden type="text" id="estado" name="estado" value="0">
+			<input hidden type="text" id="fuga" name="fuga" value="0">
+			<input hidden type="text" id="albergue" name="albergue" value="0">
+ 			<input hidden type="text" id="rut" name="rut" value=<?php echo $_REQUEST['rut']; ?>>
 
 </div>
 
