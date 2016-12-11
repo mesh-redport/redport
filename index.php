@@ -62,13 +62,17 @@
         echo "<div class='event_content'>";
         if($row["alerta"] == "Temprana Preventiva"){
             echo "<div class='number_box_green'>";
-            echo "<p id='numero'>7.5º</p>";
         }else if($row["alerta"] == "Amarilla"){
             echo "<div class='number_box_yellow'>";
-            echo "<p id='numero'>7.5º</p>";
         }else if($row["alerta"] == "Roja"){
             echo "<div class='number_box_red'>";
-            echo "<p id='numero'>7.5º</p>";
+        }
+        if($row["tipo"] == "sismo"){
+            echo "<p id='numero'><div class='rpicon-rupture-home'></div></p>";
+        }else if($row["tipo"] == "incendio"){
+            echo "<p id='numero'><div class='rpicon-rupture-home'></div></p>";
+        }else{
+            echo "<p id='numero'><div class='rpicon-rupture-home'></div></p>";
         }
         echo "</div><div class='table'><table><tr><td class=\"celda\"><p class=\"table_text\">Fecha:</p></td>";
         echo "<td><p class=\"table_text\">".$row["fecha"]."</p></td></tr><tr><td class=\"celda\"><p class=\"table_text\">Hora:</p></td>";
@@ -131,23 +135,7 @@
    </div>
 
    <div class="map">
-    <!--Google maps-->
-      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3345.0698151437036!2d-71.58095672261143!3d-33.02829109958188!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1468279338455" width="347" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
-    <!--Mapbox screenshot-->
-    <!--
-      <img class="map_content" src="https://api.mapbox.com/styles/v1/cleudio/ciqiooxr70000bjm0krbou6i0/static/-71.579739,-33.029077,12.96,-9.96,30.00/347x250?access_token=pk.eyJ1IjoiY2xldWRpbyIsImEiOiJjaWkxNmUyeGIwMDM5dDNrZnI1N2Y1eGxrIn0.gZNnFCWNxfxUD50feHVsyg" width="347" height="250" alt="Dark" />-->
-      <div id='map' style='width: 347px; height: 250px;'></div>
-
-        <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiY2xldWRpbyIsImEiOiJjaXIxb3o2NTUwMDNvOWhrcTVwaGRudG0xIn0.ve3cEnjZjNjqpYw_hju_cQ';
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/cleudio/ciqiooxr70000bjm0krbou6i0',
-            center: [-71.601162, -33.017948],
-            zoom: 10
-        })
-        </script>
-
+ MI CALVARIO
    </div>
 </div>
 

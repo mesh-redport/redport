@@ -405,7 +405,7 @@
 
       $coordenadaX =  $fila['cord1'];
       $coordenadaY =  $fila['cord2'];
-      $sql2 = 'SELECT cid,ipautor,ubicacionX,ubicacionY,comentario,fecha,hora,p.estado FROM comentarios LEFT JOIN personas as p on ipautor = registroIP and ubicacionX = cord1 group by cid order by cid desc limit 4';
+      $sql2 = 'SELECT cid,ipautor,ubicacionX,ubicacionY,comentario,fecha,hora,p.estado FROM comentarios LEFT JOIN personas as p on ipautor = registroIP and ubicacionX = cord1 group by cid order by cid desc';
       $resultado2 = mysql_query($sql2, $enlace);
 
       if (!$resultado2) {
@@ -414,11 +414,13 @@
         exit;
       }
 
+      $cont=0;
       while ($fila2 = mysql_fetch_assoc($resultado2)) {
         $array2[] = $fila2;
         $distancia_real = distance($fila2['ubicacionX'], $fila2['ubicacionY'], $fila['cord1'], $fila['cord2'], "K");
-
         if($distancia_real <= 2){
+          $cont++;
+          echo $cont;
           echo'<div class="container_report">
           <ul id="reports_list" class="container_reports">
             <li>
