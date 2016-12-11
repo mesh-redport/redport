@@ -189,8 +189,8 @@
 <div class="toggle_box">
   <div class="text_box_3">
 	  <form action="agregar_persona_POST.php" class="login-rut" method="POST">
-		  <p id="text_button ">Agregar otra persona</p>
-		  <button id="btn_reportar" class="button_small_two" type="submit" >+</button>
+		  <p id="text_button">Agregar otra persona</p>
+		  <button id="btn_reportar" class="button_small_two" type="submit">+</button>
 		  <input type="text" hidden id="rut" name="rut" value="<?php echo $_REQUEST['rut']; ?>">
 
 	  </form>

@@ -28,9 +28,9 @@
   <form action="agregar_direccion_POST.php" class="login-rut" method="POST">
       <!--<form action="formulario_1.php" class="login-rut" method="POST">-->
 
-      <input type="text"  id="rut" name="rut" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
-      <input type="text"  id="latitu" name="latitu" value="">
-      <input type="text" id="longitu" name="longitu" value="">
+      <input type="text" hidden id="rut" name="rut" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
+      <input type="text" hidden id="latitu" name="latitu" value="">
+      <input type="text" hidden id="longitu" name="longitu" value="">
 
       <button id="btn_reportar" class="button_ip" onclick="getLocation()" type="submit" disabled >Reportarme</button>
       <!--<input class="button_rut" type="k  submit" text="Reportarme" />-->
