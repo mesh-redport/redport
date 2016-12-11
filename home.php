@@ -23,42 +23,51 @@
 
     <!-- ======= Fin header======= -->
     <?php
-
     $shots = mysql_query("SELECT id,fecha,hora,tipo,lugar,alerta,intensidad,magnitud FROM mesh_redport.evento ORDER BY id DESC LIMIT 1;") or die(mysql_error());
-
     while($row = mysql_fetch_assoc($shots)) {
 
-      if($row["alerta"] == "Temprana Preventiva"){
-        echo "<div class='event_box_green'>";
-      }else if($row["alerta"] == "Amarilla"){
-        echo "<div class='event_box_yellow'>";
-      }else if($row["alerta"] == "Roja"){
-        echo "<div class='event_box_red'>";
-      }
-      echo "<h1>Alerta ".$row["alerta"]." por ".$row["tipo"]."</h1>";
-      echo "<div class='event_content'>";
-      if($row["alerta"] == "Temprana Preventiva"){
-        echo "<div class='number_box_green'>";
-        echo "<p id='numero'>7.5º</p>";
-      }else if($row["alerta"] == "Amarilla"){
-        echo "<div class='number_box_yellow'>";
-        echo "<p id='numero'>7.5º</p>";
-      }else if($row["alerta"] == "Roja"){
-        echo "<div class='number_box_red'>";
-        echo "<p id='numero'>7.5º</p>";
-      }
-      echo "</div><div class='table'><table><tr><td class=\"celda\"><p class=\"table_text\">Fecha:</p></td>";
-      echo "<td><p class=\"table_text\">".$row["fecha"]."</p></td></tr><tr><td class=\"celda\"><p class=\"table_text\">Hora:</p></td>";
-      echo "<td><p class=\"table_text\">".$row["hora"]."</p></td></tr><tr><td class=\"celda\"><p class=\"table_text\">Lugar:</p></td>";
-      echo " <td><p class=\"table_text\">".$row["lugar"];
-      if(strlen($row["lugar"]) < 5){ echo " Region"; };
-      echo "</p></td></tr><tr>";
-      if($row["intensidad"]) {
-        echo "<td class=\"celda\"><p class=\"table_text\">Intensidad:</p></td>";
-        echo " <td><p class=\"table_text\">" . $row["intensidad"] . " </p></td>";
-      };
-      echo "</tr><tr><td class=\"celda\"><p class=\"table_text\">Magnitud:</p></td>";
-      echo " <td><p class=\"table_text\">".$row["magnitud"]." Ricther</p></td>";
+        if($row["alerta"] == "Temprana Preventiva"){
+            echo "<div class='event_box_green'>";
+        }else if($row["alerta"] == "Amarilla"){
+            echo "<div class='event_box_yellow'>";
+        }else if($row["alerta"] == "Roja"){
+            echo "<div class='event_box_red'>";
+        }
+        echo "<h1>Alerta ".$row["alerta"]." por ";
+        if($row["tipo"] == 1){
+            echo "Sismo</h1>";
+        }else if($row["tipo"] == 2){
+            echo "Incendio</h1>";
+        }else{
+            echo "Emergencia</h1>";
+        }
+        echo "<div class='event_content'>";
+        if($row["alerta"] == "Temprana Preventiva"){
+            echo "<div class='number_box_green'>";
+        }else if($row["alerta"] == "Amarilla"){
+            echo "<div class='number_box_yellow'>";
+        }else if($row["alerta"] == "Roja"){
+            echo "<div class='number_box_red'>";
+        }
+        if($row["tipo"] == 1){
+            echo "<p id='numero'><div class='rpicon-rupture-home'></div></p>";
+        }else if($row["tipo"] == 2){
+            echo "<p id='numero'><div class='rpicon-fire fire-event'></div></p>";
+        }else{
+            echo "<p id='numero'><div class='rpicon-cut-bridge cut-event'></div></p>";
+        }
+        echo "</div><div class='table'><table><tr><td class=\"celda\"><p class=\"table_text\">Fecha:</p></td>";
+        echo "<td><p class=\"table_text\">".$row["fecha"]."</p></td></tr><tr><td class=\"celda\"><p class=\"table_text\">Hora:</p></td>";
+        echo "<td><p class=\"table_text\">".$row["hora"]."</p></td></tr><tr><td class=\"celda\"><p class=\"table_text\">Lugar:</p></td>";
+        echo " <td><p class=\"table_text\">".$row["lugar"];
+        if(strlen($row["lugar"]) < 5){ echo " Region"; };
+        echo "</p></td></tr><tr>";
+        if($row["intensidad"]) {
+            echo "<td class=\"celda\"><p class=\"table_text\">Intensidad:</p></td>";
+            echo " <td><p class=\"table_text\">" . $row["intensidad"] . " </p></td>";
+        };
+        echo "</tr><tr><td class=\"celda\"><p class=\"table_text\">Magnitud:</p></td>";
+        echo " <td><p class=\"table_text\">".$row["magnitud"]." Ricther</p></td>";
 
 
     } ?>
@@ -161,7 +170,7 @@
 </div>
 
 <div class="container" id="mi_ficha">
- <a class="button_edit" href="#"><div class="rpicon-edit"></div></a>
+ <!--<a class="button_edit" href="#"><div class="rpicon-edit"></div></a>-->
  <div class="edit_title"><h1 class="title-icon">Ficha de información</h1></div>
  <div class="perfil_persona">
   <div class="usuario_personal"><div class="rpicon-user-good"></div></div>
@@ -420,7 +429,7 @@
         $distancia_real = distance($fila2['ubicacionX'], $fila2['ubicacionY'], $fila['cord1'], $fila['cord2'], "K");
         if($distancia_real <= 2){
           $cont++;
-          echo $cont;
+          //echo $cont;
           echo'<div class="container_report">
           <ul id="reports_list" class="container_reports">
             <li>

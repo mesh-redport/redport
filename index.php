@@ -58,7 +58,14 @@
         }else if($row["alerta"] == "Roja"){
             echo "<div class='event_box_red'>";
         }
-        echo "<h1>Alerta ".$row["alerta"]." por ".$row["tipo"]."</h1>";
+        echo "<h1>Alerta ".$row["alerta"]." por ";
+        if($row["tipo"] == 1){
+            echo "Sismo</h1>";
+        }else if($row["tipo"] == 2){
+            echo "Incendio</h1>";
+        }else{
+            echo "Emergencia</h1>";
+        }
         echo "<div class='event_content'>";
         if($row["alerta"] == "Temprana Preventiva"){
             echo "<div class='number_box_green'>";
@@ -67,12 +74,12 @@
         }else if($row["alerta"] == "Roja"){
             echo "<div class='number_box_red'>";
         }
-        if($row["tipo"] == "sismo"){
+        if($row["tipo"] == 1){
             echo "<p id='numero'><div class='rpicon-rupture-home'></div></p>";
-        }else if($row["tipo"] == "incendio"){
-            echo "<p id='numero'><div class='rpicon-rupture-home'></div></p>";
+        }else if($row["tipo"] == 2){
+            echo "<p id='numero'><div class='rpicon-fire fire-event'></div></p>";
         }else{
-            echo "<p id='numero'><div class='rpicon-rupture-home'></div></p>";
+            echo "<p id='numero'><div class='rpicon-cut-bridge cut-event'></div></p>";
         }
         echo "</div><div class='table'><table><tr><td class=\"celda\"><p class=\"table_text\">Fecha:</p></td>";
         echo "<td><p class=\"table_text\">".$row["fecha"]."</p></td></tr><tr><td class=\"celda\"><p class=\"table_text\">Hora:</p></td>";

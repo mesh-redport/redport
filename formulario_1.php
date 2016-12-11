@@ -4,7 +4,7 @@
 <?php include "head.php"; ?>
 <body>
    <div class="pagina_esp">
-   
+
    <!-- ======= header======= -->
   <div class="header2">
   	<div class="back-button">
@@ -89,25 +89,25 @@
   <h1 id="title_form">¿Se encuentran bien?</h1>
 	<div class="toggle_box">
 		<div class="text_box_2">
-			<input type="checkbox" id="toggle_small_6" class="toggle_button_small"/>	
+			<input type="checkbox" id="toggle_small_6" class="toggle_button_small"/>
 		  	<label for="toggle_small_6" class="rpicon-toggle-small"><p class="texto-toggle">Carlos Aracena R.</p></label>
 		</div>
   </div>
 
-    
+
 </div>-->
 
 <div class="container">
 
   <h1 id="title_form">¿Hay otras personas contigo?</h1>
   	<ul class="name_list">
-  		<div class="list_box">
+  		<div class="list_box" id="familiaAJAX">
 			<?php
 			$array = null;
 
 			if($_REQUEST['rut']) {
 				$rut = $_REQUEST['rut'];
-				$sql = 'SELECT tipo,estado FROM familia WHERE familiar = ' . ip2long($rut);
+				$sql = 'SELECT id,tipo,estado FROM familia WHERE familiar = ' . ip2long($rut);
 				$resultado = mysql_query($sql, $enlace);
 
 				if (!$resultado) {
@@ -141,6 +141,28 @@
 					echo '<div class="text_box_2">';
 
 					echo '<div class="icon_box_f">';
+          echo  '<form action="#" id="formularioeliminar">';
+
+          echo '<input type="text" hidden id="id" name="id" value="'.$clave['id'].'">';
+          //echo '<input type="text" id="rut" name="rut" value="'.$_REQUEST['rut'].'">';
+          //echo '<div class="state_user_box"><div class="rpicon-close"></div></div>';
+          echo '<button id="btn_reportar" class="button_close" type="submit">X</button>';
+
+          /*<form action="#" class="form-report" id="formulariocomentarios">
+            <textarea class="report__box" type="text" id="comentario" name="título" placeholder="Escribe aquí tu reporte" rows="5" cols="5"></textarea>
+            <div class="container_button">
+              <button id="btn_reportar" class="button_comment" type="submit">Reportar</button>
+            </div>
+            <input type="text" hidden id="rut" name="rut" value="<?php echo $_REQUEST['rut']; ?>">
+            <input type="text" hidden id="comentarioM" name="comentarioM" value="">
+            <input type="text" hidden id="cord1C" name="cord1C" value="<?php echo $fila['cord1']; ?>">
+            <input type="text" hidden id="cord2C" name="cord2C">
+          </form>*/
+
+
+          echo '</form>';
+
+
 					if( strpos( $clave['estado'], "1" ) !== false ) {
 						echo '<div class="state_user_box"><div class="rpicon-injured"></div></div>';
 					}
@@ -153,6 +175,7 @@
 					if( strpos( $clave['estado'], "4" ) !== false ) {
 						echo '<div class="state_user_box"><div class="rpicon-dead"></div></div>';
 					}
+
 
 					echo '</div><li>';
 
@@ -174,13 +197,7 @@
 					//print_r($array);
 				}
 			}
-			// ...hasta que finalmente el penúltimo valor se copia al último valor
 
-			// salida:
-			// 0 => 2 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 2 )
-			// 1 => 4 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 4 )
-			// 2 => 6 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 6 )
-			// 3 => 6 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 6 )*/
 			?>
 
 		</div>
@@ -207,6 +224,25 @@
 
  </body>
  <script>
+ //reportes
+ var timeout = setInterval(reload, 1000);
+ function reload(){
+   $('#familiaAJAX').load(location.href + ' #familiaAJAX');
+ }
+
+ $(document).on('submit', '#formularioeliminar', function() {
+
+   $.post("eliminar_familia_POST.php", $(this).serialize())
+   .done(function(data){
+    $("#dis").fadeIn('slow', function(){
+      $("#dis").html('<div class="alert alert-info">'+data+'</div>');
+      $("#emp-SaveForm")[0].reset();
+    });
+  });
+   return false;
+ });
+</script>
+<script>
 	   //var estado+"";
 	   function checkType(radio,sta)
 	   {
