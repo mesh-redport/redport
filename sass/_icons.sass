@@ -429,9 +429,8 @@
 	z-index: 99
 
 .fire-event
-	top: 10px
-	margin-top: -16px
-	margin-left: 38px
+	top: 3px
+	margin-left: 12px
 	position: relative
 	z-index: 99
 
@@ -440,6 +439,11 @@
 	color: $font_color
 	font-size: 70px
 	line-height: 1.2 !important
+
+[class^="fire-event"]:before, [class*="fire-event"]:before
+	color: $font_color
+	font-size: 55px
+	line-height: 1 !important
 
 .rpicon-landslide
 	top: 10px
