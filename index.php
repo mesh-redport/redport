@@ -22,7 +22,7 @@
       <input hidden type="text" id="latitu1" name="latitu1" value="">
       <input hidden type="text" id="longitu1" name="longitu1" value="">
 
-      <button id="btn_reportar" class="button_rut button_sos" onclick="getLocation()" type="submit" disabled >Enviar SOS</button>
+      <button id="btn_SOS" class="button_rut button_sos" onclick="getLocation()" type="submit" disabled >Enviar SOS</button>
       <!--<input class="button_rut" type="k  submit" text="Reportarme" />-->
   </form>
 </div>
@@ -175,6 +175,7 @@
 
                z1.value = "" + position.coords.longitude;
                document.getElementById("btn_reportar").disabled = false;
+               document.getElementById("btn_SOS").disabled = false;
        }
    </script>
  </body>
