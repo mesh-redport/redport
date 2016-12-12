@@ -77,9 +77,9 @@ footer{
 
 .center{text-align: center;}
 
-// Desktop
+// breakpoint and up
 
-@media(min-width:767px) {
+@media (min-width: $screen-md){
     .navbar {
         padding: 20px 0;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -90,11 +90,9 @@ footer{
     .top-nav-collapse {
         padding: 0;
     }
-
     .eat-1-top{margin-top: -1em;}
 	.eat-2-top{margin-top: -2em;}
 	.eat-3-top{margin-top: -3em;}
 	.eat-4-top{margin-top: -4em;}
 	.eat-5-top{margin-top: -5em;}
-
 }
