@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>redport</title>
+
+  <link rel='stylesheet' type='text/css' href='sass/main.css' />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+   <link href="https://file.myfontastic.com/KHbqgc9xxoCbZJYRdioaqd/icons.css" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href='css/redport.css' />
+</head>
+ <body>
+   <div class="pagina_esp">
+   <!-- ======= header======= -->
+  <div class="header2">
+    <div class="back-button"><a href="home.php?rut=<?php echo $_REQUEST['rut'] ?>"><div class="rpicon-back"></div></a></div>
+    <div class="title_header"><h1>Registro de eventos</h1></div>
+
+  </div>
+
+<div class="container_void">
+  <h1>Eventos recientes</h1>
+</div>
+<div class="event_box_red">
+<div class="container_event_main">
+  <div class="event_content">
+<div class="number_box_red">
+  <p id="numero">7.5º</p>
+</div>
+<div class="table">
+    <table>
+      <tr>
+        <td class="celda"><p class="table_text">Fecha:</p></td>
+        <td><p class="table_text">10 Marzo 2016</p></td>
+      </tr>
+      <tr>
+        <td class="celda"><p class="table_text">Hora:</p></td>
+        <td><p class="table_text">21:30 pm</p></td>
+      </tr>
+      <tr>
+        <td class="celda"><p class="table_text">Lugar:</p></td>
+        <td><p class="table_text">Región de los Ríos</p></td>
+      </tr>
+      <tr>
+        <td class="celda"><p class="table_text">Intensidad:</p></td>
+        <td><p class="table_text">VII</p></td>
+      </tr>
+    </table>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<div class="event_box_yellow">
+<div class="container_event">
+    <div class="event_content">
+  <div class="number_box_yellow">
+    <p id="numero">5.3º</p>
+  </div>
+  <div class="table">
+      <table>
+        <tr>
+          <td class="celda"><p class="table_text">Fecha:</p></td>
+          <td><p class="table_text">10 Marzo 2016</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Hora:</p></td>
+          <td><p class="table_text">22:30 pm</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Lugar:</p></td>
+          <td><p class="table_text">Región de los Ríos</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Intensidad:</p></td>
+          <td><p class="table_text">V</p></td>
+        </tr>
+      </table>
+    </div>
+    </div>
+</div>
+</div>
+
+<div class="event_box_yellow">
+<div class="container_event">
+    <div class="event_content">
+  <div class="number_box_yellow">
+    <p id="numero">4.6º</p>
+  </div>
+  <div class="table">
+      <table>
+        <tr>
+          <td class="celda"><p class="table_text">Fecha:</p></td>
+          <td><p class="table_text">10 Marzo 2016</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Hora:</p></td>
+          <td><p class="table_text">22:OO pm</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Lugar:</p></td>
+          <td><p class="table_text">Región de los Ríos</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Intensidad:</p></td>
+          <td><p class="table_text">IV</p></td>
+        </tr>
+      </table>
+    </div>
+    </div>
+</div>
+</div>
+
+<div class="event_box_green">
+<div class="container_event">
+    <div class="event_content">
+  <div class="number_box_green">
+    <p id="numero">3.5º</p>
+  </div>
+  <div class="table">
+      <table>
+        <tr>
+          <td class="celda"><p class="table_text">Fecha:</p></td>
+          <td><p class="table_text">10 Marzo 2016</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Hora:</p></td>
+          <td><p class="table_text">21:00 pm</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Lugar:</p></td>
+          <td><p class="table_text">Región de los Ríos</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Intensidad:</p></td>
+          <td><p class="table_text">III</p></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="event_box_yellow">
+<div class="container_event">
+    <div class="event_content">
+  <div class="number_box_yellow">
+    <p id="numero">4.4º</p>
+  </div>
+  <div class="table">
+      <table>
+        <tr>
+          <td class="celda"><p class="table_text">Fecha:</p></td>
+          <td><p class="table_text">9 Marzo 2016</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Hora:</p></td>
+          <td><p class="table_text">16:OO pm</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Lugar:</p></td>
+          <td><p class="table_text">Región de los Ríos</p></td>
+        </tr>
+        <tr>
+          <td class="celda"><p class="table_text">Intensidad:</p></td>
+          <td><p class="table_text">IV</p></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+  </div>
+ </body>
+</html>

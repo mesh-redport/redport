@@ -21,11 +21,20 @@ $('#btn_display').click(function(e){
 
 });
 
+
 $(document).ready(main);
 
 var contador = 1 ;
 
+
 function main(){
+
+	$(".menu_nav").click(function() {
+		$('.menu_nav').animate({
+			right: '-100%'
+		})
+		contador = 1;
+	});
 
 	$('.menu-button').click(function(e){
 		e.preventDefault();
@@ -39,7 +48,7 @@ function main(){
 
 			contador = 0;
 
-		} else { 
+		} else {
 
 			contador = 1;
 

@@ -78,7 +78,7 @@
 
 <div class="container_button">
  <a id="btn_display" class="button_two_event" href="#">Ver alertas</a>
- <a class="button_two_event" href="eventos.html">ver registro</a>
+ <a class="button_two_event" href="eventos.php?rut=<?php echo $_REQUEST['rut'] ?>">ver registro</a>
 </div>
 
 <div id="display_content" class="effects">
@@ -173,18 +173,30 @@
  <!--<a class="button_edit" href="#"><div class="rpicon-edit"></div></a>-->
  <div class="edit_title"><h1 class="title-icon">Ficha de información</h1></div>
  <div class="perfil_persona">
-  <div class="usuario_personal"><div class="rpicon-user-good"></div></div>
-  <!--<p id="nombre_personal">Gloria Aracena</p>-->
+   <?php
+   $sql = 'SELECT cord1,cord2,registroIP,detalle,estado FROM personas WHERE cord1 != 0 and registroIP = "'.ip2long($_REQUEST['rut']).'" and detalle = "'.$_SERVER['HTTP_USER_AGENT'].'" LIMIT 1';
+   $resultado2 = mysql_query($sql, $enlace);
+
+   while ($fila2 = mysql_fetch_assoc($resultado2)) {
+     $array2[] = $fila2;
+     echo '<div class="usuario_personal"><div class="rpicon-user-';
+     if($fila2['estado'] == 0) echo 'good';
+     else echo 'bad';
+     echo '"></div></div>';
+     break;
+    }
+    ?>
+  <p id="nombre_personal"><?php echo $_REQUEST['rut'] ?></p>
 </div>
 <h2>Te encuentras con</h2>
 <ul class="name_list">
-  <div class="list_box">
+  <div class="list_box" id="familiaAJAX">
     <?php
     $array = null;
 
     if($_REQUEST['rut']) {
       $rut = $_REQUEST['rut'];
-      $sql = 'SELECT tipo,estado FROM familia WHERE familiar = ' . ip2long($rut);
+      $sql = 'SELECT id,tipo,estado FROM familia WHERE familiar = ' . ip2long($rut);
       $resultado = mysql_query($sql, $enlace);
 
       if (!$resultado) {
@@ -218,17 +230,28 @@
             echo '<div class="text_box_2">';
 
             echo '<div class="icon_box_f">';
-            if( strpos( $clave['estado'], "1" ) !== false ) {
-              echo '<div class="state_user_box"><div class="rpicon-injured"></div></div>';
-            }
-            if( strpos( $clave['estado'], "2" ) !== false ) {
-              echo '<div class="state_user_box"><div class="rpicon-caught"></div></div>';
-            }
-            if( strpos( $clave['estado'], "3" ) !== false ) {
-              echo '<div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>';
-            }
+            echo  '<form action="#" id="formularioeliminar">';
+
+            echo '<input type="text" hidden id="id" name="id" value="'.$clave['id'].'">';
+
+            echo '<button id="btn_reportar" class="button_close" type="submit">X</button>';
+
+
+
+            echo '</form>';
+
             if( strpos( $clave['estado'], "4" ) !== false ) {
               echo '<div class="state_user_box"><div class="rpicon-dead"></div></div>';
+            }else{
+              if( strpos( $clave['estado'], "1" ) !== false ) {
+                echo '<div class="state_user_box"><div class="rpicon-injured"></div></div>';
+              }
+              if( strpos( $clave['estado'], "2" ) !== false ) {
+                echo '<div class="state_user_box"><div class="rpicon-caught"></div></div>';
+              }
+              if( strpos( $clave['estado'], "3" ) !== false ) {
+                echo '<div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>';
+              }
             }
 
             echo '</div><li>';
@@ -278,6 +301,13 @@
 
     $casas = mysql_query("SELECT id,idcreador,tipo,estado,fugas,albergue,fecha FROM mesh_redport.vivienda WHERE idcreador = '".ip2long($_REQUEST['rut'])."' ORDER BY id DESC LIMIT 1;") or die(mysql_error());
 
+    if (mysql_num_rows($casas)==0) {
+      echo '<div class="home-icon-container"><div class="rpicon-home"></div></div><h2 class="texto_vivienda">Vivienda sin notificar</h2>';
+      echo '<ul class="name_list"><div class="list_box">';
+      echo '<div class="text_box_2"><li>Sin Daños avisados</li></div>';
+      echo '<div class="text_box_2"><li>Sin Fugas avisadas</li></div>';
+      echo '<div class="text_box_2"><li>No necesita albergue</li></div>';
+    }else{
     while($row = mysql_fetch_assoc($casas)) {
 
       if($row["tipo"] == "1"){
@@ -310,7 +340,7 @@
       }else if($row["albergue"] == "0"){
         echo '<div class="text_box_2"><li>Necesita albergue</li></div>';
       }
-
+      }
     }
 
       ?>
@@ -406,6 +436,8 @@
       exit;
     }
 
+    $cont=0;
+
     while ($fila = mysql_fetch_assoc($resultado)) {
       $array[] = $fila;
           //echo 'mi coord es lat '.$fila['cord1'].' longi '.$fila['cord2'].'<br>';
@@ -414,7 +446,7 @@
 
       $coordenadaX =  $fila['cord1'];
       $coordenadaY =  $fila['cord2'];
-      $sql2 = 'SELECT cid,ipautor,ubicacionX,ubicacionY,comentario,fecha,hora,p.estado FROM comentarios LEFT JOIN personas as p on ipautor = registroIP and ubicacionX = cord1 group by cid order by cid desc';
+      $sql2 = 'SELECT cid,ipautor,ubicacionX,ubicacionY,comentario,fecha,hora,p.estado FROM comentarios LEFT JOIN personas as p on ipautor = registroIP and ubicacionX = cord1 order by cid desc';
       $resultado2 = mysql_query($sql2, $enlace);
 
       if (!$resultado2) {
@@ -423,11 +455,11 @@
         exit;
       }
 
-      $cont=0;
+      $limite = 3;
       while ($fila2 = mysql_fetch_assoc($resultado2)) {
         $array2[] = $fila2;
         $distancia_real = distance($fila2['ubicacionX'], $fila2['ubicacionY'], $fila['cord1'], $fila['cord2'], "K");
-        if($distancia_real <= 2){
+        if($distancia_real <= 2 && $cont<$limite){
           $cont++;
           //echo $cont;
           echo'<div class="container_report">
@@ -443,7 +475,8 @@
                   <div class="comment_box">
                     <div class="username">
                       <h2 id="name" class="username"> A ';
-                        if($distancia_real >=1) echo round($distancia_real,0)." Km.";
+                        if($distancia_real == 0) echo "algunos pasos";
+                        else if($distancia_real >=1) echo round($distancia_real,0)." Km.";
                         else echo round($distancia_real*1000,0)." Mt.";
                         echo '</h2>
                       </a>
@@ -458,13 +491,15 @@
               </div>';
             }
           }
+          break;
+          exit;
         }
         ?>
       </div>
 
       <!-- botón ver más reportes-->
       <div class="button_more">
-        <a href="#" class="text_button_more">ver más reportes<div class="rpicon-down"></div></a>
+        <a href="#" class="text_button_more" id="showmore">ver más reportes<div class="rpicon-down"></div></a>
       </div>
 
     </div>
@@ -475,6 +510,24 @@
 <script src="js/jquery-3.0.0.min.js"></script>
 <script src="js/main.js"></script>
 <script>
+
+//reportes
+var timeout = setInterval(reloadF, 1000);
+function reloadF(){
+  $('#familiaAJAX').load(location.href + ' #familiaAJAX');
+}
+
+$(document).on('submit', '#formularioeliminar', function() {
+
+  $.post("eliminar_familia_POST.php", $(this).serialize())
+  .done(function(data){
+   $("#dis").fadeIn('slow', function(){
+     $("#dis").html('<div class="alert alert-info">'+data+'</div>');
+     $("#emp-SaveForm")[0].reset();
+   });
+ });
+  return false;
+});
   //reportes
   var timeout = setInterval(reload, 3000);
   function reload(){
@@ -483,6 +536,7 @@
   //sensores
   var timeout1 = setInterval(reloadS, 60000);
   function reloadS(){
+    <?php $cont++ ?>
     $('#indicatorsAJAX').load(location.href + ' #indicatorsAJAX');
   }
 
@@ -506,6 +560,41 @@
     return false;
   });
   /* Data Insert Ends Here */
+</script>
+<script>
+$(document).ready(function() {
+	var showChar = 100;
+	var ellipsestext = "...";
+	var moretext = "more";
+	var lesstext = "less";
+	$('.more').each(function() {
+		var content = $(this).html();
+
+		if(content.length > showChar) {
+
+			var c = content.substr(0, showChar);
+			var h = content.substr(showChar-1, content.length - showChar);
+
+			var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+			$(this).html(html);
+		}
+
+	});
+
+	$(".morelink").click(function(){
+		if($(this).hasClass("less")) {
+			$(this).removeClass("less");
+			$(this).html(moretext);
+		} else {
+			$(this).addClass("less");
+			$(this).html(lesstext);
+		}
+		$(this).parent().prev().toggle();
+		$(this).prev().toggle();
+		return false;
+	});
+});
 </script>
 </body>
 </html>

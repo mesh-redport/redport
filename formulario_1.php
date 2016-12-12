@@ -71,32 +71,6 @@
 		<button id="btn_reportar" class="button_ip" type="submit" >Reportar Estado</button>
 </form>
 
-<!--
-<div class="container">
-
-  	<h1 id="title_form">¿Están estas personas contigo?</h1>
-	<div class="toggle_box">
-		<div class="text_box_2">
-		    <input type="checkbox" id="toggle_small_4" class="toggle_button_small"/>
-		  	<label for="toggle_small_4" class="rpicon-toggle-small"><p class="texto-toggle">Carlos Aracena R.</p></label>
-		 </div>
-		<div class="text_box_2">
-			<input type="checkbox" id="toggle_small_5" class="toggle_button_small"/>
-		  	<label for="toggle_small_5" class="rpicon-toggle-small"><p class="texto-toggle">María Fernandez S.</p></label>
-		</div>
-  </div>
-
-  <h1 id="title_form">¿Se encuentran bien?</h1>
-	<div class="toggle_box">
-		<div class="text_box_2">
-			<input type="checkbox" id="toggle_small_6" class="toggle_button_small"/>
-		  	<label for="toggle_small_6" class="rpicon-toggle-small"><p class="texto-toggle">Carlos Aracena R.</p></label>
-		</div>
-  </div>
-
-
-</div>-->
-
 <div class="container">
 
   <h1 id="title_form">¿Hay otras personas contigo?</h1>
@@ -144,37 +118,27 @@
           echo  '<form action="#" id="formularioeliminar">';
 
           echo '<input type="text" hidden id="id" name="id" value="'.$clave['id'].'">';
-          //echo '<input type="text" id="rut" name="rut" value="'.$_REQUEST['rut'].'">';
-          //echo '<div class="state_user_box"><div class="rpicon-close"></div></div>';
+
           echo '<button id="btn_reportar" class="button_close" type="submit">X</button>';
 
-          /*<form action="#" class="form-report" id="formulariocomentarios">
-            <textarea class="report__box" type="text" id="comentario" name="título" placeholder="Escribe aquí tu reporte" rows="5" cols="5"></textarea>
-            <div class="container_button">
-              <button id="btn_reportar" class="button_comment" type="submit">Reportar</button>
-            </div>
-            <input type="text" hidden id="rut" name="rut" value="<?php echo $_REQUEST['rut']; ?>">
-            <input type="text" hidden id="comentarioM" name="comentarioM" value="">
-            <input type="text" hidden id="cord1C" name="cord1C" value="<?php echo $fila['cord1']; ?>">
-            <input type="text" hidden id="cord2C" name="cord2C">
-          </form>*/
 
 
           echo '</form>';
 
 
-					if( strpos( $clave['estado'], "1" ) !== false ) {
-						echo '<div class="state_user_box"><div class="rpicon-injured"></div></div>';
-					}
-					if( strpos( $clave['estado'], "2" ) !== false ) {
-						echo '<div class="state_user_box"><div class="rpicon-caught"></div></div>';
-					}
-					if( strpos( $clave['estado'], "3" ) !== false ) {
-						echo '<div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>';
-					}
-					if( strpos( $clave['estado'], "4" ) !== false ) {
-						echo '<div class="state_user_box"><div class="rpicon-dead"></div></div>';
-					}
+          if( strpos( $clave['estado'], "4" ) !== false ) {
+            echo '<div class="state_user_box"><div class="rpicon-dead"></div></div>';
+          }else{
+            if( strpos( $clave['estado'], "1" ) !== false ) {
+              echo '<div class="state_user_box"><div class="rpicon-injured"></div></div>';
+            }
+            if( strpos( $clave['estado'], "2" ) !== false ) {
+              echo '<div class="state_user_box"><div class="rpicon-caught"></div></div>';
+            }
+            if( strpos( $clave['estado'], "3" ) !== false ) {
+              echo '<div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>';
+            }
+          }
 
 
 					echo '</div><li>';
