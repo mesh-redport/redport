@@ -4,7 +4,7 @@
 <?php include "head.php"; ?>
 <body>
    <div class="pagina_esp">
-   
+
    <!-- ======= header======= -->
   <div class="header2">
   	<div class="back-button">
@@ -71,43 +71,17 @@
 		<button id="btn_reportar" class="button_ip" type="submit" >Reportar Estado</button>
 </form>
 
-<!--
-<div class="container">
-
-  	<h1 id="title_form">¿Están estas personas contigo?</h1>
-	<div class="toggle_box">
-		<div class="text_box_2">
-		    <input type="checkbox" id="toggle_small_4" class="toggle_button_small"/>
-		  	<label for="toggle_small_4" class="rpicon-toggle-small"><p class="texto-toggle">Carlos Aracena R.</p></label>
-		 </div>
-		<div class="text_box_2">
-			<input type="checkbox" id="toggle_small_5" class="toggle_button_small"/>
-		  	<label for="toggle_small_5" class="rpicon-toggle-small"><p class="texto-toggle">María Fernandez S.</p></label>
-		</div>
-  </div>
-
-  <h1 id="title_form">¿Se encuentran bien?</h1>
-	<div class="toggle_box">
-		<div class="text_box_2">
-			<input type="checkbox" id="toggle_small_6" class="toggle_button_small"/>	
-		  	<label for="toggle_small_6" class="rpicon-toggle-small"><p class="texto-toggle">Carlos Aracena R.</p></label>
-		</div>
-  </div>
-
-    
-</div>-->
-
 <div class="container">
 
   <h1 id="title_form">¿Hay otras personas contigo?</h1>
   	<ul class="name_list">
-  		<div class="list_box">
+  		<div class="list_box" id="familiaAJAX">
 			<?php
 			$array = null;
 
 			if($_REQUEST['rut']) {
 				$rut = $_REQUEST['rut'];
-				$sql = 'SELECT tipo,estado FROM familia WHERE familiar = ' . ip2long($rut);
+				$sql = 'SELECT id,tipo,estado FROM familia WHERE familiar = ' . ip2long($rut);
 				$resultado = mysql_query($sql, $enlace);
 
 				if (!$resultado) {
@@ -141,18 +115,31 @@
 					echo '<div class="text_box_2">';
 
 					echo '<div class="icon_box_f">';
-					if( strpos( $clave['estado'], "1" ) !== false ) {
-						echo '<div class="state_user_box"><div class="rpicon-injured"></div></div>';
-					}
-					if( strpos( $clave['estado'], "2" ) !== false ) {
-						echo '<div class="state_user_box"><div class="rpicon-caught"></div></div>';
-					}
-					if( strpos( $clave['estado'], "3" ) !== false ) {
-						echo '<div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>';
-					}
-					if( strpos( $clave['estado'], "4" ) !== false ) {
-						echo '<div class="state_user_box"><div class="rpicon-dead"></div></div>';
-					}
+          echo  '<form action="#" id="formularioeliminar">';
+
+          echo '<input type="text" hidden id="id" name="id" value="'.$clave['id'].'">';
+
+          echo '<button id="btn_reportar" class="button_close" type="submit">X</button>';
+
+
+
+          echo '</form>';
+
+
+          if( strpos( $clave['estado'], "4" ) !== false ) {
+            echo '<div class="state_user_box"><div class="rpicon-dead"></div></div>';
+          }else{
+            if( strpos( $clave['estado'], "1" ) !== false ) {
+              echo '<div class="state_user_box"><div class="rpicon-injured"></div></div>';
+            }
+            if( strpos( $clave['estado'], "2" ) !== false ) {
+              echo '<div class="state_user_box"><div class="rpicon-caught"></div></div>';
+            }
+            if( strpos( $clave['estado'], "3" ) !== false ) {
+              echo '<div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>';
+            }
+          }
+
 
 					echo '</div><li>';
 
@@ -174,13 +161,7 @@
 					//print_r($array);
 				}
 			}
-			// ...hasta que finalmente el penúltimo valor se copia al último valor
 
-			// salida:
-			// 0 => 2 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 2 )
-			// 1 => 4 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 4 )
-			// 2 => 6 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 6 )
-			// 3 => 6 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 6 )*/
 			?>
 
 		</div>
@@ -207,6 +188,25 @@
 
  </body>
  <script>
+ //reportes
+ var timeout = setInterval(reload, 1000);
+ function reload(){
+   $('#familiaAJAX').load(location.href + ' #familiaAJAX');
+ }
+
+ $(document).on('submit', '#formularioeliminar', function() {
+
+   $.post("eliminar_familia_POST.php", $(this).serialize())
+   .done(function(data){
+    $("#dis").fadeIn('slow', function(){
+      $("#dis").html('<div class="alert alert-info">'+data+'</div>');
+      $("#emp-SaveForm")[0].reset();
+    });
+  });
+   return false;
+ });
+</script>
+<script>
 	   //var estado+"";
 	   function checkType(radio,sta)
 	   {

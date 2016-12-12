@@ -7,7 +7,7 @@
    <div class="pagina_esp">
    <!-- ======= header======= -->
   <div class="header2">
-    <div class="back-button"><a href="home.html"><div class="rpicon-back"></div></a></div>
+    <div class="back-button"><a href="home.php?rut=<?php echo $_REQUEST['rut'] ?>"><div class="rpicon-back"></div></a></div>
     <div class="title_header"><h1>Estado de mi hogar</h1></div>
 
   </div>

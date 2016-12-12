@@ -34,32 +34,6 @@ include "db-connection.php";
 
     <?php
 
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-/*::                                                                         :*/
-/*::  This routine calculates the distance between two points (given the     :*/
-/*::  latitude/longitude of those points). It is being used to calculate     :*/
-/*::  the distance between two locations using GeoDataSource(TM) Products    :*/
-/*::                                                                         :*/
-/*::  Definitions:                                                           :*/
-/*::    South latitudes are negative, east longitudes are positive           :*/
-/*::                                                                         :*/
-/*::  Passed to function:                                                    :*/
-/*::    lat1, lon1 = Latitude and Longitude of point 1 (in decimal degrees)  :*/
-/*::    lat2, lon2 = Latitude and Longitude of point 2 (in decimal degrees)  :*/
-/*::    unit = the unit you desire for results                               :*/
-/*::           where: 'M' is statute miles (default)                         :*/
-/*::                  'K' is kilometers                                      :*/
-/*::                  'N' is nautical miles                                  :*/
-/*::  Worldwide cities and other features databases with latitude longitude  :*/
-/*::  are available at http://www.geodatasource.com                          :*/
-/*::                                                                         :*/
-/*::  For enquiries, please contact sales@geodatasource.com                  :*/
-/*::                                                                         :*/
-/*::  Official Web site: http://www.geodatasource.com                        :*/
-/*::                                                                         :*/
-/*::         GeoDataSource.com (C) All Rights Reserved 2015              :*/
-/*::                                                                         :*/
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
   $theta = $lon1 - $lon2;
@@ -92,7 +66,7 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
           //echo 'mi coord es lat '.$fila['cord1'].' longi '.$fila['cord2'].'<br>';
 
           //TODOS LOS USUARIOS
-          $sql2 = 'SELECT cord1,cord2,registroIP FROM personas WHERE cord1 != 0 and registroIP !='.$fila['registroIP'];
+          $sql2 = 'SELECT cord1,cord2,registroIP,personas.estado,familiar FROM personas left join familia on registroIP = familiar where cord1 != 0 and registroIP !='.$fila['registroIP'];
           $resultado2 = mysql_query($sql2, $enlace);
 
           if (!$resultado2) {
@@ -104,14 +78,30 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
           while ($fila2 = mysql_fetch_assoc($resultado2)) {
             $array2[] = $fila2;
 
-            echo'<div class="user_box"><a href="#"><div class="user_avatar_2"><div class="rpicon-user-good-small"></div></div><div class="username"><h2 id="user_name" class="username">';
-            echo /*$fila2['registroIP']*/'Persona'.'</h2><br><p id="distance" class="username">A ';
+            echo'<div class="user_box"><a href="#"><div class="user_avatar_2"><div class="rpicon-user-';
+            if($fila2['estado'] == 0) echo 'good';
+            else echo 'bad';
+            echo '-small"></div></div><div class="username"><h2 id="user_name" class="username">';
+            echo 'Persona';
+            if($fila2['familiar']) echo ' con familia';
+            echo'</h2><br><p id="distance" class="username">A ';
             $distancia_real = distance($fila2['cord1'], $fila2['cord2'], $fila['cord1'], $fila['cord2'], "K");
             if($distancia_real >=1) echo round($distancia_real,0)." Km.</p></div></a></div>";
-            else echo round($distancia_real*1000,0)." Mt.</p></div></a></div>";
+            else echo round($distancia_real*1000,0)." Mt.</p>";
+
+            if( strpos( $fila2['estado'], "1" ) !== false ) {
+              echo '<div class="state_user_box"><div class="rpicon-injured"></div></div>';
+            }
+            if( strpos( $fila2['estado'], "2" ) !== false ) {
+              echo '<div class="state_user_box"><div class="rpicon-caught"></div></div>';
+            }
+            if( strpos( $fila2['estado'], "3" ) !== false ) {
+              echo '<div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>';
+            }
+            echo "</div></a></div>";
 
 
-          
+
           }
         }
 ?>
@@ -119,7 +109,7 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
 
 
 
-            
+
             <!--
               <div class="user_box">
                 <a href="#">
@@ -130,8 +120,8 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
                   </div>
                 </a>
               </div>
-            
-            
+
+
               <div class="user_box">
                 <a href="#">
                   <div class="user_avatar_2"><div class="rpicon-user-good-small"></div></div>
@@ -141,8 +131,8 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
                   </div>
                 </a>
               </div>
-            
-            
+
+
               <div class="user_box">
                 <a href="ficha_persona.html">
                   <div class="user_avatar_2"><div class="rpicon-user-bad-small"></div></div>
@@ -169,7 +159,7 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
                 <div class="username">
                 <h2 id="user_name" class="username">nombre_apellido</h2>
                 <p id="distance" class="username">A 13 km</p>
-                <div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>  
+                <div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>
                 <div class="state_user_box"><div class="rpicon-trapped"></div></div>
               </div>
             </div>
@@ -208,11 +198,11 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
                 <div class="state_user_box"><div class="rpicon-injured"></div></div>
               </div>
             </div>-->
-            
+
         </li>
       </ul>
     </div>
-    
+
     </div>
   </div>
 
