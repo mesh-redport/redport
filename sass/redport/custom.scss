@@ -12,7 +12,6 @@ html {
 
 h1.logo{
 	display: inline-block;
-	margin: 0;
 	span{
 		display: none;
 	}
@@ -30,13 +29,12 @@ h1.logo{
 
 .uc{text-transform: uppercase;}
 
-.first{margin-top: 2em;}
-
+.first{margin-top: 2rem;}
 
 
 .scroll-section{
 	min-height: 100%;
-	padding-top: 4em;
+	padding: 5rem 0;
 
 	&:nth-child(odd){
 		background-color: transparentize(#FEC709, .2);
@@ -57,6 +55,23 @@ h1.logo{
 		font-size: 18px;
 		font-weight: 300;
 		text-align: center
+	}
+}
+
+.intro{
+	margin: 50px 0 0 0;
+	position: relative;
+	.container{
+		position: relative;
+		.row{
+			position: relative;
+			.overlay{
+				position: absolute;
+				bottom: 0;
+				background-color: transparentize($white, .45);
+				padding: 32px;
+			}
+		}
 	}
 }
 
@@ -87,12 +102,17 @@ footer{
         transition: background .5s ease-in-out,padding .5s ease-in-out;
     }
 
+    .intro{margin: 90px 0 0 0;}
+
     .top-nav-collapse {
         padding: 0;
     }
-    .eat-1-top{margin-top: -1em;}
-	.eat-2-top{margin-top: -2em;}
-	.eat-3-top{margin-top: -3em;}
-	.eat-4-top{margin-top: -4em;}
-	.eat-5-top{margin-top: -5em;}
+
+	$unit: 24px;
+
+    .eat-1-top{margin-top: -1 * $unit}
+	.eat-2-top{margin-top: -2 * $unit}
+	.eat-3-top{margin-top: -3 * $unit}
+	.eat-4-top{margin-top: -4 * $unit}
+	.eat-5-top{margin-top: -5 * $unit}
 }
