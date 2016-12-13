@@ -371,18 +371,15 @@
     <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3345.0698151437036!2d-71.58095672261143!3d-33.02829109958188!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1468279338455" width="347" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
     <!--Mapbox screenshot-->
     <!--<img class="map_content" src="https://api.mapbox.com/styles/v1/cleudio/ciqiooxr70000bjm0krbou6i0/static/-71.579739,-33.029077,12.96,-9.96,30.00/347x250?access_token=pk.eyJ1IjoiY2xldWRpbyIsImEiOiJjaWkxNmUyeGIwMDM5dDNrZnI1N2Y1eGxrIn0.gZNnFCWNxfxUD50feHVsyg" width="347" height="250" alt="Dark" />-->
-    <a class="button_two_map" href="reportar_entorno.html">Reporta tu entorno</a>
-    <div id='map' style='width: 347px; height: 250px;'></div>
+    <a class="button_two_map" disabled href="#">Reporta tu entorno</a>
+      <div id="container" style="flex: none; width: 100%; height: 250px; overflow: hidden;">
+          <div id="draggable"style="flex: none; -webkit-transform: translateY(-50%) translateX(-50%)scale(0.7, 0.7);">
+            <img src="img/demo_map.jpg">
+          </div>
 
-    <script>
-      mapboxgl.accessToken = 'pk.eyJ1IjoiY2xldWRpbyIsImEiOiJjaXIxb3o2NTUwMDNvOWhrcTVwaGRudG0xIn0.ve3cEnjZjNjqpYw_hju_cQ';
-      var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/cleudio/ciqiooxr70000bjm0krbou6i0',
-        center: [-71.601162, -33.017948],
-        zoom: 10
-      });
-    </script>
+        </div>
+    <!--<div id='map' style='width: 347px; height: 250px;'></div>-->
+
 
   </div>
 </div>
@@ -455,7 +452,7 @@
         exit;
       }
 
-      $limite = 3;
+      $limite = 5;
       while ($fila2 = mysql_fetch_assoc($resultado2)) {
         $array2[] = $fila2;
         $distancia_real = distance($fila2['ubicacionX'], $fila2['ubicacionY'], $fila['cord1'], $fila['cord2'], "K");
@@ -474,10 +471,10 @@
                   echo '-small"></div></div>
                   <div class="comment_box">
                     <div class="username">
-                      <h2 id="name" class="username"> A ';
-                        if($distancia_real == 0) echo "algunos pasos";
-                        else if($distancia_real >=1) echo round($distancia_real,0)." Km.";
-                        else echo round($distancia_real*1000,0)." Mt.";
+                      <h2 id="name" class="username">';
+                        if($distancia_real == 0) echo "Cerca";
+                        else if($distancia_real >=1) echo "A ".round($distancia_real,0)." Km.";
+                        else echo "A ".round($distancia_real*1000,0)." Mt.";
                         echo '</h2>
                       </a>
                       <span class="comment_date">';
@@ -499,7 +496,7 @@
 
       <!-- botón ver más reportes-->
       <div class="button_more">
-        <a href="#" class="text_button_more" id="showmore">ver más reportes<div class="rpicon-down"></div></a>
+        <a href="personas_comentarios.php?rut=<?php echo $_REQUEST['rut'] ?>" class="text_button_more" id="showmore">ver más reportes<div class="rpicon-down"></div></a>
       </div>
 
     </div>
@@ -507,7 +504,6 @@
 </div>
 <!-- =====Fin caja de comentarios===== -->
 
-<script src="js/jquery-3.0.0.min.js"></script>
 <script src="js/main.js"></script>
 <script>
 

@@ -17,13 +17,6 @@ include "db-connection.php";
     <div class="title_header"><h1>Personas recientes</h1></div>
 
   </div>
-  <div class="container_search">
-    <form action="">
-      <a href="#" class="rpicon-search"></a>
-      <input class="input_search" type="text" placeholder="Buscar a alguien" id="search_1">
-      <label for="search_1"></label>
-    </form>
-  </div>
 
   <div class="container">
 
@@ -84,10 +77,12 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
             echo '-small"></div></div><div class="username"><h2 id="user_name" class="username">';
             echo 'Persona';
             if($fila2['familiar']) echo ' con familia';
-            echo'</h2><br><p id="distance" class="username">A ';
+            echo'</h2><br><p id="distance" class="username">';
             $distancia_real = distance($fila2['cord1'], $fila2['cord2'], $fila['cord1'], $fila['cord2'], "K");
-            if($distancia_real >=1) echo round($distancia_real,0)." Km.</p></div></a></div>";
-            else echo round($distancia_real*1000,0)." Mt.</p>";
+
+            if($distancia_real == 0) echo "Cerca</p>";
+            else if($distancia_real >=1) echo "A ".round($distancia_real,0)." Km.</p>";
+            else echo "A ".round($distancia_real*1000,0)." Mt.</p>";
 
             if( strpos( $fila2['estado'], "1" ) !== false ) {
               echo '<div class="state_user_box"><div class="rpicon-injured"></div></div>';
@@ -105,100 +100,6 @@ $sql = 'SELECT cord1,cord2,registroIP,detalle FROM personas WHERE cord1 != 0 and
           }
         }
 ?>
-
-
-
-
-
-            <!--
-              <div class="user_box">
-                <a href="#">
-                  <div class="user_avatar_2"><div class="rpicon-user-good-small"></div></div>
-                  <div class="username">
-                  <h2 id="user_name" class="username">nombre_apellido</h2>
-                  <p id="distance" class="username">A 2 km</p>
-                  </div>
-                </a>
-              </div>
-
-
-              <div class="user_box">
-                <a href="#">
-                  <div class="user_avatar_2"><div class="rpicon-user-good-small"></div></div>
-                  <div class="username">
-                  <h2 id="user_name" class="username">nombre_apellido</h2>
-                  <p id="distance" class="username">A 5 km</p>
-                  </div>
-                </a>
-              </div>
-
-
-              <div class="user_box">
-                <a href="ficha_persona.html">
-                  <div class="user_avatar_2"><div class="rpicon-user-bad-small"></div></div>
-                  <div class="username">
-                  <h2 id="user_name" class="username">nombre_apellido</h2>
-                  <p id="distance" class="username">A 7 km</p>
-                  <span data-tooltip="Paciente crónico"><div class="state_user_box"><div class="rpicon-chronic-patient"></div></div></span>
-                  <div class="state_user_box"><div class="rpicon-trapped"></div></div>
-                  <div class="state_user_box"><div class="rpicon-injured"></div></div>
-                  </div>
-                </a>
-            </div>
-            <div class="user_box">
-                <a href="#">
-                  <div class="user_avatar_2"><div class="rpicon-user-good-small"></div></div>
-                  <div class="username">
-                  <h2 id="user_name" class="username">nombre_apellido</h2>
-                  <p id="distance" class="username">A 10 km</p>
-                </a>
-              </div>
-            </div>
-            <div class="user_box">
-                <div class="user_avatar_2"><div class="rpicon-user-bad-small"></div></div>
-                <div class="username">
-                <h2 id="user_name" class="username">nombre_apellido</h2>
-                <p id="distance" class="username">A 13 km</p>
-                <div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>
-                <div class="state_user_box"><div class="rpicon-trapped"></div></div>
-              </div>
-            </div>
-            <div class="user_box">
-                <div class="user_avatar_2"><div class="rpicon-user-bad-small"></div></div>
-                <div class="username">
-                <h2 id="user_name" class="username">nombre_apellido</h2>
-                <p id="distance" class="username">A 18 km</p>
-                <div class="state_user_box"><div class="rpicon-trapped"></div></div>
-                <div class="state_user_box"><div class="rpicon-injured"></div></div>
-              </div>
-            </div>
-            <div class="user_box">
-                <div class="user_avatar_2"><div class="rpicon-user-bad-small"></div></div>
-                <div class="username">
-                <h2 id="user_name" class="username">nombre_apellido</h2>
-                <p id="distance" class="username">A 22 km</p>
-                <div class="state_user_box"><div class="rpicon-trapped"></div></div>
-              </div>
-            </div>
-            <div class="user_box">
-                <div class="user_avatar_2"><div class="rpicon-user-bad-small"></div></div>
-                <div class="username">
-                <h2 id="user_name" class="username">nombre_apellido</h2>
-                <p id="distance" class="username">A 28 km</p>
-                <div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>
-              </div>
-            </div>
-            <div class="user_box">
-                <div class="user_avatar_2"><div class="rpicon-user-bad-small"></div></div>
-                <div class="username">
-                <h2 id="user_name" class="username">nombre_apellido</h2>
-                <p id="distance" class="username">A 27 km</p>
-                <div class="state_user_box"><div class="rpicon-chronic-patient"></div></div>
-                <div class="state_user_box"><div class="rpicon-trapped"></div></div>
-                <div class="state_user_box"><div class="rpicon-injured"></div></div>
-              </div>
-            </div>-->
-
         </li>
       </ul>
     </div>

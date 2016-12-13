@@ -142,13 +142,25 @@
    </div>
 
    <div class="map">
- MI CALVARIO
-   </div>
+
+    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3345.0698151437036!2d-71.58095672261143!3d-33.02829109958188!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1468279338455" width="347" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+    <!--Mapbox screenshot-->
+    <!--<img class="map_content" src="https://api.mapbox.com/styles/v1/cleudio/ciqiooxr70000bjm0krbou6i0/static/-71.579739,-33.029077,12.96,-9.96,30.00/347x250?access_token=pk.eyJ1IjoiY2xldWRpbyIsImEiOiJjaWkxNmUyeGIwMDM5dDNrZnI1N2Y1eGxrIn0.gZNnFCWNxfxUD50feHVsyg" width="347" height="250" alt="Dark" />-->
+    <a class="button_two_map" disabled href="#">Reporta tu entorno</a>
+      <div id="container" style="flex: none; width: 100%; height: 250px; overflow: hidden;">
+          <div id="draggable"style="flex: none; -webkit-transform: translateY(-50%) translateX(-50%) scale(0.7, 0.7);">
+            <img src="img/demo_map.jpg">
+          </div>
+
+        </div>
+    <!--<div id='map' style='width: 347px; height: 250px;'></div>-->
+
+
+  </div>
 </div>
 
 </div>
 
-<script src="js/jquery-3.0.0.min.js"></script>
 <script src="js/main.js"></script>
    <script>
        var y = document.getElementById("latitu");

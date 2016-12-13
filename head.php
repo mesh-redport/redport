@@ -4,8 +4,13 @@
 	<title>REdPORT</title>
 	<link rel='stylesheet' type='text/css' href='css/redport.css' />
 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
 	<meta name="theme-color" content="#ffce00" />
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
-	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<script>
+$( function() {
+	$( "#draggable" ).draggable();
+} );
+</script>
 
 </head>
