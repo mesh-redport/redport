@@ -23,6 +23,16 @@ html {
 	}
 }
 
+.top-nav-collapse{
+	.navbar-brand{
+		img{
+			width: 36px;
+			height: 36px;
+			margin-top: -5px;
+		}
+	}
+}
+
 h1.logo{
 	display: inline-block;
 	span{
