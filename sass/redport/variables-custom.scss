@@ -172,7 +172,7 @@ $navbar-default-toggle-icon-bar-bg: rgb(136, 136, 136);
 $navbar-default-toggle-border-color: rgb(221, 221, 221);
 $navbar-inverse-color: lighten($gray-light, 15%);
 $navbar-inverse-bg: rgb(45, 1, 64);
-$navbar-inverse-border: rgb(11, 3, 30);
+$navbar-inverse-border: darken($navbar-inverse-bg, 3%);
 $navbar-inverse-link-color: lighten($gray-light, 15%);
 $navbar-inverse-link-hover-color: rgb(255, 255, 255);
 $navbar-inverse-link-hover-bg: transparent;

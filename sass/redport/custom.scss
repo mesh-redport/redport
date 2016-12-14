@@ -26,7 +26,7 @@ h1.logo{
 .intro{
 	margin: 50px 0 0 0;
 	position: relative;
-	background-color: $navbar-inverse-border;
+	background-color: $navbar-inverse-bg;
 	img{margin: 0 auto}
 	.container{
 		position: relative;
@@ -115,6 +115,18 @@ h1.logo{
 	p{
 		max-width: 100%;
 		height: auto;
+	}
+}
+
+.icn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 90px;
+	img{
+		max-width: 25%;
+		height: auto;
+		margin: 1ex 0;
 	}
 }
 
