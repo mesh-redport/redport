@@ -64,7 +64,7 @@ $table-bg-active: $table-bg-hover;
 $table-border-color: rgb(221, 221, 221);
 $btn-font-weight: normal;
 $btn-default-color: rgb(51, 51, 51);
-$btn-default-bg: rgb(255, 255, 255);
+$btn-default-bg: $body-bg;
 $btn-default-border: rgb(204, 204, 204);
 $btn-primary-color: rgb(255, 255, 255);
 $btn-primary-bg: rgb(206, 124, 2);

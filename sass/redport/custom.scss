@@ -39,21 +39,35 @@ h1.logo{
 	&:nth-child(odd){
 		background-color: transparentize(#FEC709, .2);
 	}
+
+	h1{
+		font-weight: 200;
+		text-transform: uppercase;
+		margin-bottom: 1em;
+	}
 }
 
 .profile{
-		margin: 1em 2em 3em 0;
+	text-align: center;
+	margin-bottom: 3em;
+	
+	img{
+		width: 120px;
+		height: 120px;
+		}
 	h3{
-		font-family: Roboto;
-		font-weight: 900;
-		font-size: 18px;
+		font-family: "Roboto Condensed";
+		font-weight: 600;
+		font-size: 16px;
 		text-transform: uppercase;
-		letter-spacing: .1ex;
+		letter-spacing: .033ex;
 		text-align: center;
+		margin: 1ex 0 .5ex 0;
 	}
 	p{
-		font-size: 18px;
-		font-weight: 300;
+		font-family: "Roboto Condensed";
+		font-size: 14px;
+		font-weight: 400;
 		text-align: center
 	}
 }
@@ -69,19 +83,41 @@ h1.logo{
 				position: absolute;
 				bottom: 0;
 				background-color: transparentize($white, .45);
-				padding: 32px;
+				padding: 1rem 2rem;
 			}
 		}
 	}
 }
+
+.block,
+.brand{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 120px;
+	img{
+		width: 100px;
+		max-width: 50%;
+		height: auto;
+		margin: 1em 0;
+	}
+	p{
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.block{min-height: 200px;}
 
 footer{
 	background-color: $text-color;
 	color: transparentize($white, .3);
 	min-height: 200px;
 	
+	li,
 	p{
-		padding: 2em 0 0 0;
+		font-family: "Roboto Condensed";
+		padding: 1em 0;
 		font-size: 14px;
 		font-weight: 300;
 	}
