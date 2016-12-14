@@ -99,10 +99,10 @@
                         <p><strong>REdPORT</strong> es un proyecto de código y hardware abierto para el desarrollo de infraestructura de telecomunicaciones ciudadanas.</p>
                         <p>Su diseño enmallado &mdash;no jerárquico ni centralizado&mdash; le otorga la robustez y resiliencia adecuada para enfrentar catástrofes y emergencias. Esta red busca constituirse en el último respaldo para conectar a las personas en los momentos más críticos, ayudando a coordinar la primera ayuda.</p>
                         <h4>Características</h4>
-                        <ol>
-                            <li>Redport articula una red enmallada que es más resiliente en catástrofes</li>
-                            <li>Su diseño se basa en hardware y software libre, lo que la vuelve extensible, abierta y accesible</li>
-                            <li>Cada antena provee un servicio móvil especialmente diseñado para situaciones de emergencia, que considera:
+                        <ul class='list-group'>
+                            <li class='list-group-item'>Redport articula una red enmallada que es más resiliente en catástrofes</li>
+                            <li class='list-group-item'>Su diseño se basa en hardware y software libre, lo que la vuelve extensible, abierta y accesible</li>
+                            <li class='list-group-item'>Cada antena provee un servicio móvil especialmente diseñado para situaciones de emergencia, que considera:
                                 <ul>
                                     <li>Reporte de situación personal y daño en infraestructura</li>
                                     <li>Servicio de comunicaciones p2p</li>
@@ -110,7 +110,7 @@
                                     <li>Coordinación de información relevante entre la ciudadanía y las autoridades</li>
                                 </ul>
                             </li>
-                        </ol>
+                        </ul>
                     </div>
                 </div>
                 
@@ -124,7 +124,7 @@
                 <h1>El servicio REdPORT</h1>
                 <div class='row'>
                     <div class="col-md-4 center">
-                        <img class='img-responsive' src="img/servicio.png">
+                        <img class='img-responsive' style='margin: 0 auto' src="img/servicio.png">
                     </div>
                     <div class='col-md-8'>
                         <p class='big'>El servicio <strong>REdPORT</strong> está estructurado a partir de cuatro aspectos que se han identificado como los más relevantes en momentos de catástrofe:</p>
@@ -167,23 +167,22 @@
                             <div class='brand'>
                                 <img src='img/logo-arduino.svg' />
                             </div>
-                            
                             <h4>Arduino</h4>
-                            <p>Repórtate y revisa reportes de personas cercanas y lejanas dentro del país. Podrás informar tu situación actual y ver el estado de otras personas en la red.</p>
+                            <p>Por medio de la placa Arduino REdPORT gestiona la información de sensores de presión y temperatura. Este servicio es fácilmente extensible a otros sensores y actuadores. Código disponible en <a href='https://github.com/mesh-redport/arduino'>/mesh-redport/arduino</a>.</p>
                         </div>
                         <div class='col-sm-4'>
                             <div class='brand'>
                                 <img src='img/logo-raspberry.svg' />
                             </div>
                             <h4>Raspberry Pi</h4>
-                            <p>Repórtate y revisa reportes de personas cercanas y lejanas dentro del país. Podrás informar tu situación actual y ver el estado de otras personas en la red.</p>
+                            <p>Este es el componente responsable de proveer el servicio REdPORT basado en PHP y MySQL. El código del servicio se encuentra disponible en <a href='https://github.com/mesh-redport/redport'>/mesh-redport/redport</a>.</p>
                         </div>
                         <div class='col-sm-4'>
                             <div class='brand'>
                                 <img src='img/logo-3-mesh.svg' />
                             </div>
                             <h4>Mesh Project</h4>
-                            <p>Repórtate y revisa reportes de personas cercanas y lejanas dentro del país. Podrás informar tu situación actual y ver el estado de otras personas en la red.</p>
+                            <p>El router que permite distribuir el servicio de conectividad a todos los dispositivos ha sido modificado con diferentes componentes de código abierto para ofrecer un servicio MESH.</p>
                         </div>
                     </div>
                 </div>
@@ -203,21 +202,21 @@
 
                     <div class='col-md-6'>
                         <h3>Estructura</h3>
-                        <p>La antena se construye a partir de 3 tubos de aluminio trabados por bla bla</p>
+                        <p class='big'>La antena consiste en una estructura prismática estructurada por 3 tubos de aluminio de 315 cms de largo y 41 cms de diámetro. Los tubos se traban por 4 secciones de terciado marino de 30 mm. Estos niveles o secciones se rematan con piezas de amarre que se engarzan en sus vértices y se fijan a los tubos mediante pernos Parker Allen.</p>
+                        <p class='big'>Tanto estos engarces insertos como los vínculos al panel solar están impresos en plástico PLAT XT colorFab negro.</p>
+                        <p>Todos los archivos para la fabricación digital de la antena junto a la documentación de proceso se encuentran disponibles <a href='https://github.com/mesh-redport/antena'>/mesh-redport/antena</a> de Github.</p>
                     </div>
 
                     <div class='col-md-6'>
                         <img src="img/iso-piezas.svg" alt="triangulaciones estructurales de la antena">
                     </div>
 
-                    <div class='col-md-6'>
-                        <p>Lorem</p>
-                    </div>
-
                 </div>
                 
-                <h4>Modelo 3D</h4>    
-                <iframe src="https://myhub.autodesk360.com/ue29c7652/shares/public/SHabee1QT1a327cf2b7a5e9274c490c72302?mode=embed" width="100%" height="600" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"></iframe>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BoRe8UYRtlE" frameborder="0" allowfullscreen></iframe>
+                </div>
+                
                 
             </div>
         </section>
