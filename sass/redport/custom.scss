@@ -23,14 +23,42 @@ h1.logo{
 	}
 }
 
-.condensed{
-	font-family: "Roboto Condensed";
+.intro{
+	margin: 50px 0 0 0;
+	position: relative;
+	background-color: $navbar-inverse-border;
+	img{margin: 0 auto}
+	.container{
+		position: relative;
+		.row{
+			position: relative;
+			.overlay{
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				background-color: transparentize($white, .45);
+				padding: 1rem 2rem;
+				img{
+					width: 100%;
+				}
+				p{
+					font-family: "Roboto Condensed";
+					font-size: 28px;
+					line-height: 120%;
+					font-weight: 200;
+					color: $black;
+				}
+			}
+		}
+	}
 }
 
-.uc{text-transform: uppercase;}
-
-.first{margin-top: 2rem;}
-
+.big{
+	font-family: "Roboto Condensed";
+	font-size: 28px;
+	font-weight: 200;
+}
 
 .scroll-section{
 	min-height: 100%;
@@ -72,23 +100,6 @@ h1.logo{
 	}
 }
 
-.intro{
-	margin: 50px 0 0 0;
-	position: relative;
-	.container{
-		position: relative;
-		.row{
-			position: relative;
-			.overlay{
-				position: absolute;
-				bottom: 0;
-				background-color: transparentize($white, .45);
-				padding: 1rem 2rem;
-			}
-		}
-	}
-}
-
 .block,
 .brand{
 	display: flex;
@@ -125,7 +136,9 @@ footer{
 
 
 // auxiliary
-
+.condensed{font-family: "Roboto Condensed"}
+.uc{text-transform: uppercase;}
+.first{margin-top: 2rem;}
 .center{text-align: center;}
 
 // breakpoint and up
