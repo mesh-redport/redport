@@ -3,53 +3,65 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 595.3 595.3" style="enable-background:new 0 0 595.3 595.3;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFAE00;stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#366EB5;stroke-width:2;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#010202;stroke-width:2;stroke-miterlimit:10;}
-	.st3{fill:#F6E81D;}
+	.st0{fill:none;stroke:#366EB5;stroke-width:2;stroke-miterlimit:10;}
+	.st1{fill:none;}
+	.st2{font-family:'RobotoCondensed-Regular';}
+	.st3{font-size:15px;}
 	.st4{fill:none;stroke:#E74220;stroke-width:2;stroke-miterlimit:10;}
-	.st5{fill:none;}
-	.st6{font-family:'Cera-Bold';}
-	.st7{font-size:19px;}
-	.st8{font-family:'Cera-Medium';}
-	.st9{font-size:15px;}
-	.st10{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st11{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
-	.st12{fill:#1D1D1B;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#010202;stroke-width:2;stroke-miterlimit:10;}
+	.st6{fill:#F6E81D;}
+	.st7{fill:#FFAE00;stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
+	.st8{font-size:19px;}
+	.st9{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+	.st10{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+	.st11{fill:#1D1D1B;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
 </style>
-<path class="st0" d="M406.9,273l-96,162.4c-7,11.8-24.2,11.7-31-0.3l-90.4-158.7c-8.9-15.6,2.4-34.9,20.3-34.9h179.1
-	C405.1,241.5,415.1,259.1,406.9,273z"/>
-<circle class="st1" cx="147.1" cy="401.4" r="85.8"/>
-<circle class="st2" cx="297.6" cy="142.1" r="85.8"/>
-<circle class="st3" cx="297.6" cy="142.1" r="50.5"/>
-<circle class="st4" cx="448.2" cy="400.8" r="85.8"/>
-<rect x="162.1" y="273.8" class="st5" width="272.1" height="121.8"/>
-<text transform="matrix(1 0 0 1 243.0909 278.0105)" class="st6 st7">SISTEMA DE </text>
-<text transform="matrix(1 0 0 1 220.9753 300.8105)" class="st6 st7">COMUNICACIÓN </text>
-<text transform="matrix(1 0 0 1 243.4991 323.6105)" class="st6 st7">AUTÓNOMO</text>
-<rect x="72.4" y="357.9" class="st5" width="149.4" height="106.5"/>
-<text transform="matrix(1 0 0 1 88.7282 369.1742)" class="st8 st9">COMUNICACION</text>
-<text transform="matrix(1 0 0 1 101.6282 387.1742)" class="st8 st9">LOCAL MESH</text>
-<text transform="matrix(1 0 0 1 110.2282 423.1742)" class="st8 st9">SENSORES </text>
-<text transform="matrix(1 0 0 1 98.5282 441.1742)" class="st8 st9">AMBIENTALES</text>
-<rect x="363" y="355.7" class="st5" width="168.1" height="111.1"/>
-<text transform="matrix(1 0 0 1 402.8948 366.9135)" class="st8 st9">REPORTE DE</text>
-<text transform="matrix(1 0 0 1 409.0948 384.9135)" class="st8 st9">PERSONAS</text>
-<text transform="matrix(1 0 0 1 403.4948 438.9135)" class="st8 st9">MENSAJERÍA</text>
-<rect x="247.7" y="135.8" class="st5" width="100.9" height="54.9"/>
-<text transform="matrix(1 0 0 1 274.4802 147.071)" class="st6 st9">SOLAR</text>
 <g>
-	<line class="st10" x1="295.1" y1="365.1" x2="295.1" y2="398.8"/>
-	<path class="st10" d="M312.3,378.8c3.6-4,5.7-9.3,5.7-15.2c0-12.7-10.3-23-23-23s-23,10.3-23,23c0,5.8,2.2,11.1,5.7,15.2"/>
-	<path class="st10" d="M283.4,373.4c-2.2-2.7-3.6-6.1-3.6-9.8c0-8.5,6.9-15.3,15.3-15.3s15.3,6.9,15.3,15.3c0,3.7-1.3,7.2-3.6,9.8"
-		/>
-	<path class="st10" d="M306.9,373.4c2.2-2.7,3.6-6.1,3.6-9.8c0-8.5-6.9-15.3-15.3-15.3s-15.3,6.9-15.3,15.3c0,3.7,1.3,7.2,3.6,9.8"
-		/>
-	<path class="st10" d="M288.9,368.1c-0.9-1.3-1.5-2.8-1.5-4.5c0-4.2,3.4-7.7,7.7-7.7c4.2,0,7.7,3.4,7.7,7.7c0,1.7-0.6,3.2-1.5,4.5"
-		/>
-	<path class="st10" d="M301.3,368.1c0.9-1.3,1.5-2.8,1.5-4.5c0-4.2-3.4-7.7-7.7-7.7c-4.2,0-7.7,3.4-7.7,7.7c0,1.7,0.6,3.2,1.5,4.5"
-		/>
-	<path class="st11" d="M295.1,362.1"/>
-	<circle class="st12" cx="295.1" cy="363.6" r="1.5"/>
+	<g>
+		<circle class="st0" cx="144.2" cy="401.4" r="85.8"/>
+		<rect x="83.4" y="357.9" class="st1" width="149.4" height="106.5"/>
+		<g>
+			<text transform="matrix(1 0 0 1 95.1992 369.1744)" class="st2 st3">COMUNICACION</text>
+			<text transform="matrix(1 0 0 1 104.35 387.1744)" class="st2 st3">LOCAL MESH</text>
+			<text transform="matrix(1 0 0 1 110.2466 423.1744)" class="st2 st3">SENSORES </text>
+			<text transform="matrix(1 0 0 1 100.4795 441.1744)" class="st2 st3">AMBIENTALES</text>
+		</g>
+	</g>
+	<g>
+		<circle class="st4" cx="451.1" cy="400.8" r="85.8"/>
+		<rect x="367.1" y="355.7" class="st1" width="168.1" height="111.1"/>
+		<text transform="matrix(1 0 0 1 413.4042 366.9137)" class="st2 st3">REPORTE DE</text>
+		<text transform="matrix(1 0 0 1 418.0007 384.9137)" class="st2 st3">PERSONAS</text>
+		<text transform="matrix(1 0 0 1 411.3358 438.9137)" class="st2 st3">MENSAJERÍA</text>
+	</g>
+</g>
+<g>
+	<rect x="245.5" y="135.8" class="st1" width="100.9" height="54.9"/>
+	<g>
+		<circle class="st5" cx="297.6" cy="142.1" r="85.8"/>
+		<circle class="st6" cx="297.6" cy="142.1" r="50.5"/>
+		<text transform="matrix(1 0 0 1 277.395 147.0711)" class="st2 st3">SOLAR</text>
+	</g>
+</g>
+<g>
+	<path class="st7" d="M406.4,273l-96,162.4c-7,11.8-24.2,11.7-31-0.3L189,276.4c-8.9-15.6,2.4-34.9,20.3-34.9h179.1
+		C404.6,241.5,414.6,259.1,406.4,273z"/>
+	<rect x="161.6" y="273.8" class="st1" width="272.1" height="121.8"/>
+	<text transform="matrix(1 0 0 1 248.6287 278.0106)" class="st2 st8">SISTEMA DE </text>
+	<text transform="matrix(1 0 0 1 233.4086 300.8106)" class="st2 st8">COMUNICACIÓN </text>
+	<text transform="matrix(1 0 0 1 251.7224 323.6107)" class="st2 st8">AUTÓNOMO</text>
+	<g>
+		<line class="st9" x1="297.8" y1="365.1" x2="297.8" y2="398.8"/>
+		<path class="st9" d="M314.9,378.8c3.6-4,5.7-9.3,5.7-15.2c0-12.7-10.3-23-23-23s-23,10.3-23,23c0,5.8,2.2,11.1,5.7,15.2"/>
+		<path class="st9" d="M286,373.4c-2.2-2.7-3.6-6.1-3.6-9.8c0-8.5,6.9-15.3,15.3-15.3s15.3,6.9,15.3,15.3c0,3.7-1.3,7.2-3.6,9.8"/>
+		<path class="st9" d="M309.5,373.4c2.2-2.7,3.6-6.1,3.6-9.8c0-8.5-6.9-15.3-15.3-15.3s-15.3,6.9-15.3,15.3c0,3.7,1.3,7.2,3.6,9.8"
+			/>
+		<path class="st9" d="M291.5,368.1c-0.9-1.3-1.5-2.8-1.5-4.5c0-4.2,3.4-7.7,7.7-7.7c4.2,0,7.7,3.4,7.7,7.7c0,1.7-0.6,3.2-1.5,4.5"
+			/>
+		<path class="st9" d="M303.9,368.1c0.9-1.3,1.5-2.8,1.5-4.5c0-4.2-3.4-7.7-7.7-7.7c-4.2,0-7.7,3.4-7.7,7.7c0,1.7,0.6,3.2,1.5,4.5"
+			/>
+		<path class="st10" d="M297.8,362.1"/>
+		<circle class="st11" cx="297.8" cy="363.6" r="1.5"/>
+	</g>
 </g>
 </svg>
